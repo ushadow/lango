@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.mit6570.lango.ExerciseMenuActivity"
+            android:label="@string/section_exercises" >
+        </activity>
+        <activity
+            android:name="com.mit6570.lango.FlashcardMenuActivity"
+            android:label="@string/section_flashcards" >
+        </activity>
     </application>
 
 </manifest>
