@@ -34,6 +34,7 @@ public class SectionAdapter extends BaseAdapter {
     context = c;
     sections.add(new Section(context.getString(R.string.sec_Exercises), ExerciseMenuActivity.class));
     sections.add(new Section(context.getString(R.string.sec_Flashcards), FlashcardMenuActivity.class));
+
   }
 
   public int getCount() {
