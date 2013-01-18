@@ -22,14 +22,10 @@
         <item name="android:layout_margin">10dp</item>        
     </style>
     
-    
-    <!-- Hopepage Icon theme. -->
+    <!-- Home page Icon theme. -->
     <style name="HomeIconText" parent="@android:style/TextAppearance">
-        <item name="android:textColor">#0a710b</item>
         <item name="android:fontFamily">Arial</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
-    
-
 
 </resources>

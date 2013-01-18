@@ -16,18 +16,18 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 
-//		GridView gridview = (GridView) findViewById(R.id.home_gridview);
-//		final SectionAdapter sectionAdapter = new SectionAdapter(this);
-//		gridview.setAdapter(sectionAdapter);
-//		gridview.setOnItemClickListener(new OnItemClickListener() {
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View view,
-//					int position, long id) {
-//				Intent intent = new Intent(view.getContext(), sectionAdapter
-//						.getItem(position).activityClass());
-//				startActivity(intent);
-//			}
-//		});
+		GridView gridview = (GridView) findViewById(R.id.home_gridview);
+		final SectionAdapter sectionAdapter = new SectionAdapter(this);
+		gridview.setAdapter(sectionAdapter);
+		gridview.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Intent intent = new Intent(view.getContext(), sectionAdapter
+						.getItem(position).activityClass());
+				startActivity(intent);
+			}
+		});
 	}
 
 	@Override
