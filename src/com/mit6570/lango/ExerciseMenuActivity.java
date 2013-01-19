@@ -7,14 +7,13 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import android.app.ListActivity;
+import android.app.ExpandableListActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 
-public class ExerciseMenuActivity extends ListActivity {
+public class ExerciseMenuActivity extends ExpandableListActivity {
+  private static final String ROOT_TAG = "course";
   private static final String LESSON_TAG = "lesson";
   private static final String DRILL_TAG = "drill";
-  private static final String EXERCISE_TAG = "exercise";
   private static final String NAME_ATTRIBUTE="name";
   
   @Override
@@ -23,8 +22,8 @@ public class ExerciseMenuActivity extends ListActivity {
     setContentView(R.layout.activity_exercisemenu);
     
     List<Exercise> exercises = parseXml();
-    ArrayAdapter<Exercise> aa = new ArrayAdapter<Exercise>(this, R.layout.menu_text, exercises);
-    setListAdapter(aa);
+    ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises);
+    setListAdapter(ema);
   }
   
   private List<Exercise> parseXml() {
@@ -60,7 +59,7 @@ public class ExerciseMenuActivity extends ListActivity {
                   name = parser.getName();
                   if (name.equalsIgnoreCase(LESSON_TAG) && currentExe != null){
                       exercises.add(currentExe);
-                  } else if (name.equalsIgnoreCase(EXERCISE_TAG)){
+                  } else if (name.equalsIgnoreCase(ROOT_TAG)){
                       done = true;
                   }
                   break;

@@ -75,7 +75,7 @@ public class SectionAdapter extends BaseAdapter {
           (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
       Section section = sections.get(position);
 
-      ll = (LinearLayout) inflater.inflate(R.layout.section, null);
+      ll = (LinearLayout) inflater.inflate(R.layout.grid_item_home, null);
       ImageView iv = (ImageView) ll.findViewById(R.id.section_image);
       iv.setImageResource(section.iconId());
       TextView tv = (TextView) ll.findViewById(R.id.section_text);

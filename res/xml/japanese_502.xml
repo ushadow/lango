@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<exercise name="Japanese 502">
+<course name="Japanese 502">
     <lesson name="Lesson 7">
         <drill>te+iru</drill>
+        <drill>Particle Review 1</drill>
+        <drill>Particle Review 2</drill>
     </lesson>
-</exercise>
+    <lesson name="Lesson 8">
+        <drill>Situational Usage</drill>
+        <drill>Listening Comprehension</drill>
+    </lesson>
+    <lesson name="lesson 9">
+        <drill>と思う(affirmative)1</drill>
+    </lesson>
+</course>
