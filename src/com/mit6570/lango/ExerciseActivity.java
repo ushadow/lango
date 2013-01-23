@@ -75,30 +75,9 @@ public class ExerciseActivity extends Activity {
           @Override
           public void onClick(View v) {
             if (playbackButton.isChecked()) {
-              try {
-                player = new MediaPlayer();
-                player.setDataSource(audioFileAbsPath);
-                player.prepare();
-                player.start();
-              } catch (IllegalArgumentException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-              } catch (SecurityException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-              } catch (IllegalStateException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-              } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-              }
+              startPlaying(audioFileAbsPath);
             } else {
-              if (player != null) {
-                player.stop();
-                player.release();
-                player = null;
-              }
+              stopPlaying();
             }
           }
         });
@@ -117,6 +96,29 @@ public class ExerciseActivity extends Activity {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.activity_question, menu);
     return true;
+  }
+  
+  private void startPlaying(String file) {
+    player = new MediaPlayer();
+    try {
+      player.setDataSource(file);
+      player.prepare();
+    } catch (IllegalStateException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+    player.start();
+  }
+  
+  private void stopPlaying() {
+    if (player != null) {
+      player.stop();
+      player.release();
+      player = null;
+    }
   }
 
 }
