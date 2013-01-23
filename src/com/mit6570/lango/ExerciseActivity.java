@@ -4,57 +4,101 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.security.acl.LastOwnerException;
 import java.util.List;
 import java.util.Locale;
 
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.mit6570.lango.ExerciseParser.Exercise;
 
 public class ExerciseActivity extends Activity {
-  private static final String LOG_TAG = ExerciseActivity.class.getName();
+  private MediaPlayer player;
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_exercise);
-    String src = (String) getIntent().getExtras().get("exercise_src");
+    
+    final String src = (String) getIntent().getExtras().get("exercise_src");
+    final String srcBaseName = src.replace(".xml", "");
+    
     try {
       InputStream is = getAssets().open(src);
       InputStreamReader isr = new InputStreamReader(is);
       ExerciseParser ep = new ExerciseParser(isr);
       List<Exercise> exes = ep.parse();
+      
       if (exes.size() > 0) {
-        int index = 0;
+        final int index = 0;
         Exercise e = exes.get(index);
+        
+        // Set exercise description.
         String description = String.format(Locale.US, "%d: %s", index + 1, e.description());
         TextView tv = (TextView) findViewById(R.id.text_description);
         tv.setText(description);
         
-        final Recorder recorder = new Recorder(getString(R.string.app_name));
-        final ToggleButton tb = (ToggleButton) findViewById(R.id.button_record);
-        tb.setChecked(false);
-        tb.setOnClickListener(new OnClickListener() {
+        File appDir = new File(Environment.getExternalStorageDirectory(), 
+                               getString(R.string.app_name));
+        appDir.mkdirs();
+        String audioFile = String.format(Locale.US, "%s_%d.3gp", srcBaseName, index);
+        final String audioFileAbsPath = (new File(appDir, audioFile)).getAbsolutePath();
+
+        final Recorder recorder = new Recorder();
+        
+        final ToggleButton recordButton = (ToggleButton) findViewById(R.id.button_record);
+        recordButton.setChecked(false);
+        recordButton.setOnClickListener(new OnClickListener() {
           
           @Override
           public void onClick(View button) {
-            Log.d(LOG_TAG, "toggle button clicked");
-            if (tb.isChecked()) {
-              recorder.startRecording("test");
+            if (recordButton.isChecked()) {
+              recorder.startRecording(audioFileAbsPath);
             } else {
-              Log.d(LOG_TAG, "not checked");
               recorder.stopRecording();
+            }
+          }
+        });
+        
+        final ToggleButton playbackButton = (ToggleButton) findViewById(R.id.button_playback);
+        playbackButton.setOnClickListener(new OnClickListener() {
+          
+          @Override
+          public void onClick(View v) {
+            if (playbackButton.isChecked()) {
+              try {
+                player = new MediaPlayer();
+                player.setDataSource(audioFileAbsPath);
+                player.prepare();
+                player.start();
+              } catch (IllegalArgumentException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+              } catch (SecurityException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+              } catch (IllegalStateException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+              } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+              }
+            } else {
+              if (player != null) {
+                player.stop();
+                player.release();
+                player = null;
+              }
             }
           }
         });
