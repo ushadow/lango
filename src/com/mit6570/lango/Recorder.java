@@ -13,7 +13,6 @@ public class Recorder {
   private final File appDir;
   private File audiofile;
   private MediaRecorder recorder;
-  private boolean recording = false;
   
   public Recorder(String appDir) {
     this.appDir = new File(externalDir, appDir);
@@ -25,10 +24,7 @@ public class Recorder {
    * @param filename
    * @throws IOException
    */
-  public void startRecording(String filename) throws IOException {
-    if (recording)
-      return;
-    
+  public void startRecording(String filename) {
     try {
       audiofile = File.createTempFile(filename, ".3gp", appDir);
     } catch (IOException e) {
@@ -42,20 +38,20 @@ public class Recorder {
     recorder.setOutputFile(audiofile.getAbsolutePath());
     try {
       recorder.prepare();
+      recorder.start();
     } catch (IOException ioe) {
       Log.e(LOG_TAG, "prepare() failed");
       Log.e(LOG_TAG, ioe.getMessage());
+    } catch (IllegalStateException ise) {
     }
-    recorder.start();
-    recording = true;
     Log.d(LOG_TAG, "started recording");
   }
   
   public void stopRecording() {
-    if (recording) {
-      recorder.stop();
-      recorder.release();
-      recording = false;
-    }
+    Log.d(LOG_TAG, "stopping recording");
+    recorder.stop();
+    recorder.reset();
+    recorder.release();
+    Log.d(LOG_TAG, "stopped recording");
   }
 }

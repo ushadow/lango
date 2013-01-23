@@ -15,6 +15,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/selector_button_record" 
-        android:contentDescription="@string/button_record"/>
+        android:contentDescription="@string/button_record"
+        android:textOn=""
+        android:textOff=""/>
+    
+    <ToggleButton
+        android:id="@+id/button_playback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_button_playback" 
+        android:contentDescription="@string/button_playback"
+        android:textOn="" 
+        android:textOff=""/>
     
 </LinearLayout>
