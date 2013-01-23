@@ -28,4 +28,13 @@
         android:textOn="" 
         android:textOff=""/>
     
+    <ToggleButton
+        android:id="@+id/button_playanswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_button_playback" 
+        android:contentDescription="@string/button_playanwser"
+        android:textOn="" 
+        android:textOff=""/>
+    
 </LinearLayout>

@@ -14,4 +14,5 @@
     <string name="sec_Audio">Audio</string>
 		<string name="button_record">Record</string>
 		<string name="button_playback">Play Back</string>
+		<string name="button_playanwser">Play Answer</string>
 </resources>
