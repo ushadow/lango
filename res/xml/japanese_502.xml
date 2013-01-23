@@ -4,6 +4,8 @@
         <drill>te+iru</drill>
         <drill>Particle Review 1</drill>
         <drill>Particle Review 2</drill>
+        <drill>Situational Usage</drill>
+        <drill>Listening Comprehension</drill>
     </lesson>
     <lesson name="Lesson 8">
         <drill>Situational Usage</drill>
@@ -11,5 +13,28 @@
     </lesson>
     <lesson name="Lesson 9">
         <drill>と思う(affirmative)1</drill>
+        <drill>と思う(affirmative)2</drill>
+        <drill>と思う(negative)</drill>
+        <drill>Affirmative+negative</drill>
+        <drill>Counting</drill>
+        <drill>Qualifying Nouns</drill>
+        <drill>Situational Usage</drill>
+        <drill>Listening Comprehension</drill>    
+    </lesson>
+    <lesson name="Lesson 10">
+        <drill>Time Duration Expressions</drill>
+        <drill>Situational Usage</drill>
+        <drill>Listening Compression</drill>
+    </lesson>
+    <lesson name="Lesson 11">
+        <drill>もう/もっと and counters</drill>
+        <drill>Double Particles</drill>
+        <drill>Situational Usage</drill>
+        <drill>Listening Comprehension</drill>
+    </lesson>
+    
+    <lesson name="Lesson 12">
+        <drill>Situational Usage</drill>
+        <drill>Listening Comprehension</drill>
     </lesson>
 </course>
