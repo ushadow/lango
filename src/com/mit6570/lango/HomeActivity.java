@@ -21,10 +21,9 @@ public class HomeActivity extends Activity {
 		gridview.setAdapter(sectionAdapter);
 		gridview.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				Intent intent = new Intent(view.getContext(), sectionAdapter
-						.getItem(position).activityClass());
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent intent = new Intent(view.getContext(), 
+				                           sectionAdapter.getItem(position).activityClass());
 				startActivity(intent);
 			}
 		});

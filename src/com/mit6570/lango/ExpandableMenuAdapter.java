@@ -12,9 +12,9 @@ import android.widget.TextView;
 public class ExpandableMenuAdapter extends BaseExpandableListAdapter{
 
     private Context context;
-    private List<Exercise> exercises;
+    private List<ExerciseMenu> exercises;
     
-    public ExpandableMenuAdapter(Context context, List<Exercise> exercises) {
+    public ExpandableMenuAdapter(Context context, List<ExerciseMenu> exercises) {
      this.context = context;
      this.exercises = exercises;
     }

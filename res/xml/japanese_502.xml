@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <course name="Japanese 502">
     <lesson name="Lesson 7">
-        <drill>te+iru</drill>
+        <drill src="japanese_502_lesson_7_te_iru.xml">te+iru</drill>
         <drill>Particle Review 1</drill>
         <drill>Particle Review 2</drill>
         <drill>Situational Usage</drill>
