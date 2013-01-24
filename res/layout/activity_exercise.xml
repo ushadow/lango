@@ -68,5 +68,10 @@
         <!-- android:background="@drawable/selector_button_playback" -->
 
     </LinearLayout>
-
+    
+    <TextView
+        android:id="@+id/text_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+   
 </LinearLayout>

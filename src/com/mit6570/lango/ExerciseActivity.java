@@ -15,6 +15,7 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -27,7 +28,7 @@ import android.widget.ToggleButton;
 import com.mit6570.lango.ExerciseParser.Exercise;
 
 public class ExerciseActivity extends Activity {
-  private MediaPlayer player;
+  MediaPlayer questionPlayer, responsePlayer, answerPlayer;
   
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +56,11 @@ public class ExerciseActivity extends Activity {
         setupText(R.id.text_description, description);
         
         String questionAudio = e.descriptionAudio();
-        setupPlayButton(R.id.button_playquestion, questionAudio);
+        setupPlayQuestionButton(R.id.button_playquestion, questionAudio);
         
         String answerAudio = e.answerAudio();
-        setupPlayButton(R.id.button_playanswer, answerAudio);
+        String answer = e.answer();
+        setupAnswerButton(R.id.button_playanswer, answerAudio, answer);
         
         String imgFile = e.imageFile();
         setupDescriptionImage(imgFile);
@@ -85,18 +87,7 @@ public class ExerciseActivity extends Activity {
           }
         });
         
-        final ToggleButton playbackButton = (ToggleButton) findViewById(R.id.button_playback);
-        playbackButton.setOnClickListener(new OnClickListener() {
-          
-          @Override
-          public void onClick(View v) {
-            if (playbackButton.isChecked()) {
-              startPlaying(audioFileAbsPath);
-            } else {
-              stopPlaying();
-            }
-          }
-        });
+        setupPlaybackButton(R.id.button_playback, audioFileAbsPath);
       }
     } catch (IOException e) {
       // TODO Auto-generated catch block
@@ -114,12 +105,24 @@ public class ExerciseActivity extends Activity {
     return true;
   }
   
+  private MediaPlayer createPlayer(final ToggleButton tb) {
+    MediaPlayer player = new MediaPlayer();
+    player.setOnCompletionListener(new OnCompletionListener() {
+      @Override
+      public void onCompletion(MediaPlayer mp) {
+        tb.setChecked(false);
+        stopPlaying(mp);
+      }
+    });
+    return player;
+  }
+  
   /**
    * Plays an audio file.
    * @param file absolute path of an audio file.
    */
-  private void startPlaying(String file) {
-    player = new MediaPlayer();
+  private MediaPlayer startPlaying(String file, final ToggleButton tb) {
+    MediaPlayer player = createPlayer(tb);
     try {
       player.setDataSource(file);
       player.prepare();
@@ -131,10 +134,17 @@ public class ExerciseActivity extends Activity {
       e.printStackTrace();
     }
     player.start();
+    return player;
   }
   
-  private void startPlaying(AssetFileDescriptor afd) {
-    player = new MediaPlayer();
+  /**
+   * 
+   * @param afd
+   * @param tb
+   * @return the new {@code MediaPlayer} created.
+   */
+  private MediaPlayer startPlaying(AssetFileDescriptor afd, ToggleButton tb) {
+    MediaPlayer player = createPlayer(tb);
     try {
       player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
       player.prepare();
@@ -146,28 +156,65 @@ public class ExerciseActivity extends Activity {
       e.printStackTrace();
     }
     player.start();
+    return player;
   }
   
-  private void stopPlaying() {
+  private void stopPlaying(MediaPlayer player) {
     if (player != null) {
       player.stop();
       player.release();
-      player = null;
     }
   } 
   
-  private void setupPlayButton(int buttonId, String audioFile) {
+  private void setupPlaybackButton(int buttonId, final String audioFile) {
+    final ToggleButton tb = (ToggleButton) findViewById(buttonId);
+    tb.setOnClickListener(new OnClickListener() {
+      
+      @Override
+      public void onClick(View v) {
+        if (tb.isChecked()) {
+          responsePlayer = startPlaying(audioFile, tb);
+        } else {
+          stopPlaying(responsePlayer);
+        }
+      }
+    });
+  }
+  
+  private void setupPlayQuestionButton(int buttonId, String audioFile) {
     try {
       final AssetFileDescriptor afd = getAssets().openFd(audioFile);
       final ToggleButton tb = (ToggleButton) findViewById(buttonId);
+      
       tb.setOnClickListener(new OnClickListener() {
-        
         @Override
         public void onClick(View v) {
           if (tb.isChecked()) {
-            startPlaying(afd);
+            questionPlayer = startPlaying(afd, tb);
           } else {
-            stopPlaying();
+            stopPlaying(questionPlayer);
+          }
+        }
+      });
+    } catch (IOException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+  
+  private void setupAnswerButton(int buttonId, String audioFile, final String answer) {
+    final ToggleButton tb = (ToggleButton) findViewById(buttonId);
+    try {
+      final AssetFileDescriptor afd = getAssets().openFd(audioFile);
+      tb.setOnClickListener(new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          if (tb.isChecked()) {
+            answerPlayer = startPlaying(afd, tb);
+            setupText(R.id.text_answer, answer);
+          } else {
+            stopPlaying(answerPlayer);
+            setupText(R.id.text_answer, "");
           }
         }
       });

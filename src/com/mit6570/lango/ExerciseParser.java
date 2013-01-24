@@ -17,6 +17,7 @@ public class ExerciseParser {
     private String descriptionAudioFileName;
     private String answerAudioFileName;
     private String imgFileName;
+    private String answer;
 
     public String description() { return description; }
 
@@ -26,17 +27,19 @@ public class ExerciseParser {
     
     public String imageFile() { return imgFileName; }
     
+    public String answer() { return answer; }
+    
     public void description(String description) { this.description = description; }
     
     public void descriptionAudio(String audioFilename) {
       descriptionAudioFileName = audioFilename;
     }
     
-    public void answerAudio(String audioFilename) {
-      answerAudioFileName = audioFilename;
-    }
+    public void answerAudio(String audioFilename) { answerAudioFileName = audioFilename; }
     
     public void imageFile(String filename) { imgFileName = filename; }
+    
+    public void answer(String text) { answer = text; }
   }
 
   private static final String EXERCISE_TAG = "exercise";
@@ -94,6 +97,7 @@ public class ExerciseParser {
               } else if (name.equalsIgnoreCase(ANSWER_TAG)) {
                 Map<String, String> attributes = Utils.attributes(parser);
                 currentExe.answerAudio(attributes.get(AUDIO_ATTRIBUTE));
+                currentExe.answer(parser.nextText());
               }
             }
             break;
