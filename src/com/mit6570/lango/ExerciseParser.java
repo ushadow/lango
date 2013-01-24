@@ -43,17 +43,32 @@ public class ExerciseParser {
   private static final String DESCRIPTION_TAG = "description";
   private static final String ROOT_TAG = "exercises";
   private static final String ANSWER_TAG = "answer";
+  private static final String INSTR_TAG = "instruction";
   private static final String AUDIO_ATTRIBUTE = "audio";
   private static final String IMG_ATTRIBUTE = "img";
+  
   private final XmlPullParser parser;
+  private List<Exercise> exercises;
+  private String instruction;
 
-  public ExerciseParser(InputStreamReader isr) throws XmlPullParserException {
+  /**
+   * Creates a parser for exercises.
+   * @param isr the {code: InputStreamReader} is closed by this {code: ExerciseParser}
+   * @throws XmlPullParserException
+   * @throws IOException 
+   */
+  public ExerciseParser(InputStreamReader isr) throws XmlPullParserException, IOException {
     parser = Xml.newPullParser();
     parser.setInput(isr);
+    parse();
+    isr.close();
   }
+  
+  public List<Exercise> exercises() { return exercises; }
 
-  public List<Exercise> parse() {
-    List<Exercise> exercises = null;
+  public String instruction() { return instruction; }
+  
+  private void parse() {
     try {
       int eventType = parser.getEventType();
       boolean done = false;
@@ -66,7 +81,9 @@ public class ExerciseParser {
             break;
           case XmlPullParser.START_TAG:
             name = parser.getName();
-            if (name.equalsIgnoreCase(EXERCISE_TAG)) {
+            if (name.equalsIgnoreCase(INSTR_TAG)) {
+              instruction = parser.nextText();
+            } else if (name.equalsIgnoreCase(EXERCISE_TAG)) {
               currentExe = new Exercise();
             } else if (currentExe != null) {
               if (name.equalsIgnoreCase(DESCRIPTION_TAG)) {
@@ -84,6 +101,7 @@ public class ExerciseParser {
             name = parser.getName();
             if (name.equalsIgnoreCase(EXERCISE_TAG) && currentExe != null) {
               exercises.add(currentExe);
+              currentExe = null;
             } else if (name.equalsIgnoreCase(ROOT_TAG)) {
               done = true;
             }
@@ -98,6 +116,5 @@ public class ExerciseParser {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-    return exercises;
   }
 }

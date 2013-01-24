@@ -15,4 +15,5 @@
 		<string name="button_record">Record</string>
 		<string name="button_playback">Play Back</string>
 		<string name="button_playanwser">Play Answer</string>
+    <string name="exercise_instruction">Instructions:</string>
 </resources>

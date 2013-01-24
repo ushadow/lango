@@ -17,7 +17,6 @@ import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,7 +27,6 @@ import android.widget.ToggleButton;
 import com.mit6570.lango.ExerciseParser.Exercise;
 
 public class ExerciseActivity extends Activity {
-  private static final String LOG_TAG = "lango";
   private MediaPlayer player;
   
   @Override
@@ -43,8 +41,10 @@ public class ExerciseActivity extends Activity {
       InputStream is = getAssets().open(src);
       InputStreamReader isr = new InputStreamReader(is);
       ExerciseParser ep = new ExerciseParser(isr);
-      List<Exercise> exes = ep.parse();
-      isr.close();
+      List<Exercise> exes = ep.exercises();
+      
+      String instr = ep.instruction();
+      setupText(R.id.text_instruction, instr);
       
       if (exes.size() > 0) {
         final int index = 0;
@@ -52,8 +52,7 @@ public class ExerciseActivity extends Activity {
         
         // Set exercise description.
         String description = String.format(Locale.US, "%d: %s", index + 1, e.description());
-        TextView tv = (TextView) findViewById(R.id.text_description);
-        tv.setText(description);
+        setupText(R.id.text_description, description);
         
         String questionAudio = e.descriptionAudio();
         setupPlayButton(R.id.button_playquestion, questionAudio);
@@ -202,5 +201,10 @@ public class ExerciseActivity extends Activity {
       istr.close();
 
       return bitmap;
+  }
+  
+  private void setupText(int id, String text) {
+    TextView tv = (TextView) findViewById(id);
+    tv.setText(text);
   }
 }

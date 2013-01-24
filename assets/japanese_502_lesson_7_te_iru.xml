@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exercises>
+  <instruction>Listen to the questions and respond them.</instruction>
 	<exercise>
 	    <description 
          audio="audio/559952211174.mp3" 
