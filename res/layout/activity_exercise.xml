@@ -2,39 +2,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExerciseActivity" 
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ExerciseActivity" >
 
     <TextView
         android:id="@+id/text_description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-		
-    <ToggleButton
-        android:id="@+id/button_record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_button_record" 
-        android:contentDescription="@string/button_record"
-        android:textOn=""
-        android:textOff=""/>
-    
-    <ToggleButton
-        android:id="@+id/button_playback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_button_playback" 
-        android:contentDescription="@string/button_playback"
-        android:textOn="" 
-        android:textOff=""/>
-    
-    <ToggleButton
-        android:id="@+id/button_playanswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selector_button_playback" 
-        android:contentDescription="@string/button_playanwser"
-        android:textOn="" 
-        android:textOff=""/>
-    
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ToggleButton
+            android:id="@+id/button_record"
+            style="@style/PlayerButtonRecord"
+            android:contentDescription="@string/button_record" />
+        <!-- android:background="@drawable/selector_button_record" -->
+
+        <ToggleButton
+            android:id="@+id/button_playback"
+            style="@style/PlayerButtonPlayBack"
+            android:contentDescription="@string/button_playback" />
+
+        <!-- android:background="@drawable/selector_button_playback" -->
+
+        <ToggleButton
+            android:id="@+id/button_playanswer"
+            style="@style/PlayerButtonPlayAnswer"
+            android:contentDescription="@string/button_playanwser" />
+
+        <!-- android:background="@drawable/selector_button_playback" -->
+
+    </LinearLayout>
+
 </LinearLayout>
