@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -13,17 +14,37 @@ import android.util.Xml;
 public class ExerciseParser {
   public static class Exercise {
     private String description;
+    private String descriptionAudioFileName;
+    private String answerAudioFileName;
+    private String imgFileName;
 
-    public void description(String description) {
-      this.description = description;
+    public String description() { return description; }
+
+    public String descriptionAudio() { return descriptionAudioFileName; }
+
+    public String answerAudio() { return answerAudioFileName; }
+    
+    public String imageFile() { return imgFileName; }
+    
+    public void description(String description) { this.description = description; }
+    
+    public void descriptionAudio(String audioFilename) {
+      descriptionAudioFileName = audioFilename;
     }
     
-    public String description() { return description; }
+    public void answerAudio(String audioFilename) {
+      answerAudioFileName = audioFilename;
+    }
+    
+    public void imageFile(String filename) { imgFileName = filename; }
   }
 
   private static final String EXERCISE_TAG = "exercise";
   private static final String DESCRIPTION_TAG = "description";
   private static final String ROOT_TAG = "exercises";
+  private static final String ANSWER_TAG = "answer";
+  private static final String AUDIO_ATTRIBUTE = "audio";
+  private static final String IMG_ATTRIBUTE = "img";
   private final XmlPullParser parser;
 
   public ExerciseParser(InputStreamReader isr) throws XmlPullParserException {
@@ -49,7 +70,13 @@ public class ExerciseParser {
               currentExe = new Exercise();
             } else if (currentExe != null) {
               if (name.equalsIgnoreCase(DESCRIPTION_TAG)) {
+                Map<String, String> attributes = Utils.attributes(parser);
+                currentExe.descriptionAudio(attributes.get(AUDIO_ATTRIBUTE));
+                currentExe.imageFile(attributes.get(IMG_ATTRIBUTE));
                 currentExe.description(parser.nextText());
+              } else if (name.equalsIgnoreCase(ANSWER_TAG)) {
+                Map<String, String> attributes = Utils.attributes(parser);
+                currentExe.answerAudio(attributes.get(AUDIO_ATTRIBUTE));
               }
             }
             break;

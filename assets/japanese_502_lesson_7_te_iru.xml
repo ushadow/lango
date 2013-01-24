@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <exercises>
 	<exercise>
-	    <description>(buying ice-cream)</description>
+	    <description 
+         audio="audio/559952211174.mp3" 
+         img="image/40296434265_1.png">(buying ice-cream)
+      </description>
+      <answer audio="audio/35589773980.mp3"></answer>
 	</exercise>
 	<exercise>
 	    <description>(playing computer game)</description>
