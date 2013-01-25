@@ -5,60 +5,65 @@
     android:orientation="vertical"
     tools:context=".ExerciseActivity" >
 
-    <LinearLayout 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:text="@string/exercise_instruction"/>
-        
+    <LinearLayout style="@style/ExerciseBox" >
+
+        <!-- <TextView -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:text="@string/exercise_instruction" /> -->
+
         <TextView
             android:id="@+id/text_instruction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:text="@string/exercise_instruction"/>
-        
+            style="@style/ExerciseText"
+            android:fontFamily="Times New Roman"
+            android:text="@string/exercise_instruction" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/text_description"
+                style="@style/ExerciseText"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical" />
+
+            <ToggleButton
+                android:id="@+id/button_playquestion"
+                style="@style/PlayerButtonPlayQuestion" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="questionImage" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <!-- android:background="@drawable/selector_button_record" -->
+
+            <ToggleButton
+                android:id="@+id/button_record"
+                style="@style/PlayerButtonRecord"
+                android:contentDescription="@string/button_record" />
+
+            <ToggleButton
+                android:id="@+id/button_playback"
+                style="@style/PlayerButtonPlayBack"
+                android:contentDescription="@string/button_playback" />
+
+            <!-- android:background="@drawable/selector_button_playback" -->
+
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/text_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" 
-            android:gravity="center_vertical"/>
-
-        <ToggleButton
-            android:id="@+id/button_playquestion"
-            style="@style/PlayerButtonPlayAnswer"
-            android:textOff="question" />
-    </LinearLayout>
-    
-    <ImageView
-        android:id="@+id/image_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:layout_gravity="center"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <ToggleButton
-            android:id="@+id/button_record"
-            style="@style/PlayerButtonRecord"
-            android:contentDescription="@string/button_record" />
-        <!-- android:background="@drawable/selector_button_record" -->
-
-        <ToggleButton
-            android:id="@+id/button_playback"
-            style="@style/PlayerButtonPlayBack"
-            android:contentDescription="@string/button_playback" />
-
-        <!-- android:background="@drawable/selector_button_playback" -->
+			style="@style/ExerciseBox">
 
         <ToggleButton
             android:id="@+id/button_playanswer"
@@ -67,11 +72,9 @@
 
         <!-- android:background="@drawable/selector_button_playback" -->
 
+        <TextView
+            android:id="@+id/text_answer"
+            style="@style/ExerciseText" />
     </LinearLayout>
-    
-    <TextView
-        android:id="@+id/text_answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-   
+
 </LinearLayout>

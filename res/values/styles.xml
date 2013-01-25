@@ -23,11 +23,17 @@
         <item name="android:layout_margin">10dp</item>
     </style>
 
+    <style name="wrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
     <!-- Home page Icon theme. -->
     <style name="HomeIconText" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">Arial</item>
         <item name="android:textSize">19sp</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:textColor">@color/txt_black</item>
     </style>
 
     <!-- Exercise Menu page list theme: LEVEL 1. -->
@@ -37,8 +43,8 @@
         <item name="android:paddingLeft">30dp</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingTop">8dp</item>
-        <item name="android:textColor">#000000</item>
-        <item name="android:background">#FFFFF0</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:background">@color/bk_green</item>
     </style>
 
     <!-- Exercise Menu page list theme: LEVEL 2. -->
@@ -48,7 +54,7 @@
         <item name="android:paddingLeft">65dp</item>
         <item name="android:paddingBottom">7dp</item>
         <item name="android:paddingTop">7dp</item>
-        <item name="android:textColor">#3B3B3B</item>
+        <item name="android:textColor">@color/txt_gray</item>
     </style>
 
     <!-- Exercise Media player button theme -->
@@ -58,6 +64,7 @@
         <item name="android:textOn">stop</item>
         <item name="android:textOff">record</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     <style name="PlayerButtonPlayBack">
@@ -66,6 +73,7 @@
         <item name="android:textOn">stop</item>
         <item name="android:textOff">playback</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     <style name="PlayerButtonPlayAnswer">
@@ -74,6 +82,36 @@
         <item name="android:textOn">stop</item>
         <item name="android:textOff">answer</item>
         <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="PlayerButtonPlayQuestion">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textOn">stop</item>
+        <item name="android:textOff">question</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Exercise text theme -->
+    <style name="ExerciseText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Exercise layout box theme -->
+    <style name="ExerciseBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_margin">3dp</item>
+		<item name="android:background">@color/bk_green</item>
+		<item name="android:orientation">vertical</item>
+        
     </style>
 
 </resources>
