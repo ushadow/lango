@@ -17,4 +17,6 @@
 		<string name="button_playanwser">Play Answer</string>
 		<string name="button_playquestion">Play Question</string>
     <string name="exercise_instruction">Instructions:</string>
+    <string name="record_instruction">Record your answer</string>
+    <string name="explanation">Explanation</string>
 </resources>
