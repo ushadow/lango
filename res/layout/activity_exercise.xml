@@ -36,14 +36,13 @@
                 android:id="@+id/button_playquestion"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="45dp"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:contentDescription="button_playquestion"
                 android:background="@drawable/selector_button_play_v1"
                 android:textOff="Q"
                 android:textOn="Q"
-                android:gravity="left"
                 android:textSize="18sp" 
-                android:paddingLeft="4dp"/>
+                android:gravity="left|center_vertical"/>
         </LinearLayout>
 
         <ImageView
@@ -82,12 +81,13 @@
                 android:id="@+id/button_playback"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="10dp"
                 android:contentDescription="button_playback"
-                android:drawableRight="@drawable/selector_button_playback"
+                android:background="@drawable/selector_button_play_v1"
                 android:textOff="PB"
                 android:textOn="PB"
+                android:gravity="left|center_vertical"
                 android:textSize="18sp" />
 
             <!-- <ToggleButton -->
@@ -110,22 +110,20 @@
 
 
         <!-- android:background="@drawable/selector_button_playback" -->
-<LinearLayout android:background="@color/bk_yellow" 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="2dp">
+
         <ToggleButton
             android:id="@+id/button_playanswer"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
+            android:gravity="left|center_vertical"
             android:contentDescription="button_playanswer"
-            android:drawableRight="@drawable/selector_button_playback"
+            android:background="@drawable/selector_button_play_v1"
             android:textOff="A"
             android:textOn="A"
             android:textSize="18sp" />
-</LinearLayout>
+
         <TextView
             android:id="@+id/text_answer"
             style="@style/ExerciseText" />
