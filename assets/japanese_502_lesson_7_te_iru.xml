@@ -9,6 +9,9 @@
       <answer audio="audio/35589773980.mp3">アイスクリームを買っています。</answer>
 	</exercise>
 	<exercise>
-	    <description>(playing computer game)</description>
+	    <description
+         audio="audio/88859620810.mp3"
+         img="image/40296434265_14.png">(playing computer game)</description>
+     <answer audio="audio/952964891287.mp3">コンピューターゲームをしています。</answer>
 	</exercise>
 </exercises>
