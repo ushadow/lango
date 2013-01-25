@@ -9,39 +9,11 @@ import java.util.Map;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.util.Xml;
 
 public class ExerciseParser {
-  public static class Exercise {
-    private String description;
-    private String descriptionAudioFileName;
-    private String answerAudioFileName;
-    private String imgFileName;
-    private String answer;
-
-    public String description() { return description; }
-
-    public String descriptionAudio() { return descriptionAudioFileName; }
-
-    public String answerAudio() { return answerAudioFileName; }
-    
-    public String imageFile() { return imgFileName; }
-    
-    public String answer() { return answer; }
-    
-    public void description(String description) { this.description = description; }
-    
-    public void descriptionAudio(String audioFilename) {
-      descriptionAudioFileName = audioFilename;
-    }
-    
-    public void answerAudio(String audioFilename) { answerAudioFileName = audioFilename; }
-    
-    public void imageFile(String filename) { imgFileName = filename; }
-    
-    public void answer(String text) { answer = text; }
-  }
-
   private static final String EXERCISE_TAG = "exercise";
   private static final String DESCRIPTION_TAG = "description";
   private static final String ROOT_TAG = "exercises";
@@ -51,7 +23,8 @@ public class ExerciseParser {
   private static final String IMG_ATTRIBUTE = "img";
   
   private final XmlPullParser parser;
-  private List<Exercise> exercises;
+  private final Context context;
+  private List<Bundle> exercises;
   private String instruction;
 
   /**
@@ -60,14 +33,16 @@ public class ExerciseParser {
    * @throws XmlPullParserException
    * @throws IOException 
    */
-  public ExerciseParser(InputStreamReader isr) throws XmlPullParserException, IOException {
+  public ExerciseParser(InputStreamReader isr, Context context) 
+      throws XmlPullParserException, IOException {
+    this.context = context;
     parser = Xml.newPullParser();
     parser.setInput(isr);
     parse();
     isr.close();
   }
   
-  public List<Exercise> exercises() { return exercises; }
+  public List<Bundle> exercises() { return exercises; }
 
   public String instruction() { return instruction; }
   
@@ -75,29 +50,32 @@ public class ExerciseParser {
     try {
       int eventType = parser.getEventType();
       boolean done = false;
-      Exercise currentExe = null;
+      Bundle currentExe = null;
       while (eventType != XmlPullParser.END_DOCUMENT && !done) {
         String name = null;
         switch (eventType) {
           case XmlPullParser.START_DOCUMENT:
-            exercises = new ArrayList<Exercise>();
+            exercises = new ArrayList<Bundle>();
             break;
           case XmlPullParser.START_TAG:
             name = parser.getName();
             if (name.equalsIgnoreCase(INSTR_TAG)) {
               instruction = parser.nextText();
             } else if (name.equalsIgnoreCase(EXERCISE_TAG)) {
-              currentExe = new Exercise();
+              currentExe = new Bundle();
             } else if (currentExe != null) {
               if (name.equalsIgnoreCase(DESCRIPTION_TAG)) {
                 Map<String, String> attributes = Utils.attributes(parser);
-                currentExe.descriptionAudio(attributes.get(AUDIO_ATTRIBUTE));
-                currentExe.imageFile(attributes.get(IMG_ATTRIBUTE));
-                currentExe.description(parser.nextText());
+                currentExe.putString(context.getString(R.string.ex_description_audio), 
+                                     attributes.get(AUDIO_ATTRIBUTE));
+                currentExe.putString(context.getString(R.string.ex_image), 
+                                     attributes.get(IMG_ATTRIBUTE));
+                currentExe.putString(context.getString(R.string.ex_description), parser.nextText());
               } else if (name.equalsIgnoreCase(ANSWER_TAG)) {
                 Map<String, String> attributes = Utils.attributes(parser);
-                currentExe.answerAudio(attributes.get(AUDIO_ATTRIBUTE));
-                currentExe.answer(parser.nextText());
+                currentExe.putString(context.getString(R.string.ex_answer_audio), 
+                                     attributes.get(AUDIO_ATTRIBUTE));
+                currentExe.putString(context.getString(R.string.ex_answer), parser.nextText());
               }
             }
             break;
