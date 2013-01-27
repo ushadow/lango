@@ -16,6 +16,7 @@
 		<string name="button_playback">Play Back</string>
 		<string name="button_playanwser">Play Answer</string>
 		<string name="button_playquestion">Play Question</string>
+    <string name="image_exercise">Exercise Image</string>
 
     <string name="exercise_instruction">Instructions:</string>
     <string name="record_instruction">Record your answer</string>
@@ -27,5 +28,7 @@
     <string name="ex_description_audio">ex_description_audio</string>
     <string name="ex_answer">ex_answer</string>
     <string name="ex_answer_audio">ex_answer_audio</string>
+    
+    <string name="unimplemented_msg">Coming soon.</string>
 
 </resources>

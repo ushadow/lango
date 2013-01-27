@@ -32,8 +32,6 @@ public class ExerciseActivity extends FragmentActivity {
       ExercisePagerAdapter epa = new ExercisePagerAdapter(this, exes, srcBaseName, 
                                                           ep.instruction());
       vp.setAdapter(epa);
-      
-      
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();

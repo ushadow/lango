@@ -19,6 +19,12 @@ public class SectionAdapter extends BaseAdapter {
     private Class<? extends Activity> activityClass;
     private int iconId;
 
+    /**
+     * 
+     * @param name
+     * @param iconId
+     * @param activityClass can be null.
+     */
     public Section(String name, int iconId, Class<? extends Activity> activityClass) {
       this.name = name;
       this.activityClass = activityClass;
@@ -48,12 +54,10 @@ public class SectionAdapter extends BaseAdapter {
         ExerciseMenuActivity.class));
     sections.add(new Section(context.getString(R.string.sec_Flashcards), R.drawable.ic_flashcard,
         FlashcardMenuActivity.class));
-    sections.add(new Section(context.getString(R.string.sec_Grammar), R.drawable.ic_grammar,
-        FlashcardMenuActivity.class));
+    sections.add(new Section(context.getString(R.string.sec_Grammar), R.drawable.ic_grammar, null));
     sections.add(new Section(context.getString(R.string.sec_Vocabulary), R.drawable.ic_vocabulary,
-        FlashcardMenuActivity.class));
-    sections.add(new Section(context.getString(R.string.sec_Audio), R.drawable.ic_audio,
-        FlashcardMenuActivity.class));
+                             null));
+    sections.add(new Section(context.getString(R.string.sec_Audio), R.drawable.ic_audio, null));
   }
 
   public int getCount() {
@@ -73,16 +77,17 @@ public class SectionAdapter extends BaseAdapter {
     if (convertView == null) { // if it's not recycled, initialize some
       LayoutInflater inflater =
           (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-      Section section = sections.get(position);
 
       ll = (LinearLayout) inflater.inflate(R.layout.grid_item_home, null);
-      ImageView iv = (ImageView) ll.findViewById(R.id.section_image);
-      iv.setImageResource(section.iconId());
-      TextView tv = (TextView) ll.findViewById(R.id.section_text);
-      tv.setText(section.name());
     } else {
       ll = (LinearLayout) convertView;
     }
+    
+    Section section = sections.get(position);
+    ImageView iv = (ImageView) ll.findViewById(R.id.section_image);
+    iv.setImageResource(section.iconId());
+    TextView tv = (TextView) ll.findViewById(R.id.section_text);
+    tv.setText(section.name());
 
     return ll;
   }
