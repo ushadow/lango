@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.view.ViewPager
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/pager_exercise"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
     <android.support.v4.view.PagerTitleStrip
         android:id="@+id/pager_title_strip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="#33b5e5"
-        android:textColor="#fff"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp" />
+        style="@style/ExercisePagerTitleStripe"
+        />
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_gravity="top" -->
+<!--         android:background="#33b5e5" -->
+<!--         android:paddingBottom="4dp" -->
+<!--         android:paddingTop="4dp" -->
+<!--         android:textColor="#fff" /> -->
 
-        <!-- <TextView -->
-        <!-- android:layout_width="wrap_content" -->
-        <!-- android:layout_height="wrap_content" -->
-        <!-- android:text="@string/exercise_instruction" /> -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/text_instruction"
@@ -38,10 +35,6 @@
                 style="@style/ExerciseText"
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical" />
-
-            <!-- <ToggleButton -->
-            <!-- android:id="@+id/button_playquestion" -->
-            <!-- style="@style/PlayerButtonPlayQuestion" /> -->
 
             <ToggleButton
                 android:id="@+id/button_playquestion"
@@ -70,19 +63,6 @@
                 android:fontFamily="Times New Roman"
                 android:text="@string/record_instruction" />
 
-            <!-- <ToggleButton -->
-            <!-- android:id="@+id/button_record" -->
-            <!-- style="?android:attr/borderlessButtonStyle" -->
-            <!-- android:layout_width="45dp" -->
-            <!-- android:layout_height="33dp" -->
-            <!-- android:layout_marginRight="10dp" -->
-            <!-- android:background="@drawable/selector_button_record_v1" -->
-            <!-- android:contentDescription="button_record" -->
-            <!-- android:gravity="left|center_vertical" -->
-            <!-- android:textOff="R" -->
-            <!-- android:textOn="R" -->
-            <!-- android:textSize="18sp" /> -->
-
             <ToggleButton
                 android:id="@+id/button_record"
                 style="@style/PlayerButtonRecord_v1"
@@ -96,15 +76,6 @@
                 android:background="@drawable/selector_button_play_v1"
                 android:contentDescription="button_playback"
                 android:gravity="left|center_vertical" />
-
-            <!-- <ToggleButton -->
-            <!-- android:id="@+id/button_playback" -->
-            <!-- style="@style/PlayerButtonPlayBack" -->
-            <!-- android:contentDescription="@string/button_playback" /> -->
-
-
-            <!-- android:background="@drawable/selector_button_playback" -->
-
         </LinearLayout>
     </LinearLayout>
 
@@ -131,7 +102,4 @@
             style="@style/ExerciseText" />
     </LinearLayout>
 
-
-
 </android.support.v4.view.ViewPager>
-
