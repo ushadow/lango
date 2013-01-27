@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
 
 public class ExerciseMenuActivity extends ExpandableListActivity {
@@ -39,6 +40,11 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
         if (drillSrouce != null) {
           intent.putExtra("exercise_src", drillSrouce);
           startActivity(intent);
+        } else {
+          CharSequence text = getString(R.string.unimplemented_msg);
+          int duration = Toast.LENGTH_SHORT;
+          Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+          toast.show();
         }
         return true;
       }

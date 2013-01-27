@@ -16,6 +16,7 @@
 		<string name="button_playback">Play Back</string>
 		<string name="button_playanwser">Play Answer</string>
 		<string name="button_playquestion">Play Question</string>
+    <string name="image_exercise">Exercise Image</string>
 
     <string name="exercise_instruction">Instructions:</string>
     <string name="record_instruction">Record your answer</string>
