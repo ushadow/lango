@@ -4,6 +4,6 @@
     <color name="bk_green">#F0FFF0</color>
     <color name="txt_gray">#3B3B3B</color>
     <color name="txt_black">#000000</color>
-    <color name="txt_white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="bk_forestGreen">#228B22</color>
 </resources>
