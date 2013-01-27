@@ -77,16 +77,17 @@ public class SectionAdapter extends BaseAdapter {
     if (convertView == null) { // if it's not recycled, initialize some
       LayoutInflater inflater =
           (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-      Section section = sections.get(position);
 
       ll = (LinearLayout) inflater.inflate(R.layout.grid_item_home, null);
-      ImageView iv = (ImageView) ll.findViewById(R.id.section_image);
-      iv.setImageResource(section.iconId());
-      TextView tv = (TextView) ll.findViewById(R.id.section_text);
-      tv.setText(section.name());
     } else {
       ll = (LinearLayout) convertView;
     }
+    
+    Section section = sections.get(position);
+    ImageView iv = (ImageView) ll.findViewById(R.id.section_image);
+    iv.setImageResource(section.iconId());
+    TextView tv = (TextView) ll.findViewById(R.id.section_text);
+    tv.setText(section.name());
 
     return ll;
   }
