@@ -7,9 +7,11 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.app.ActionBar;
 import android.app.ExpandableListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -49,6 +51,21 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
         return true;
       }
     });
+    
+    ActionBar actionBar = getActionBar();
+    actionBar.setDisplayHomeAsUpEnabled(true);
+  }
+  
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case android.R.id.home:
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
   }
 
   private List<ExerciseMenu> parseXml() {

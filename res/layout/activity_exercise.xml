@@ -6,9 +6,7 @@
 
     <android.support.v4.view.PagerTitleStrip
         android:id="@+id/pager_title_strip"
-        style="@style/ExercisePagerTitleStripe"
-        />
-
+        style="@style/ExercisePagerTitleStripe"/>
 
     <LinearLayout
         android:layout_width="match_parent"
