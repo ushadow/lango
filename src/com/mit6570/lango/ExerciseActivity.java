@@ -23,7 +23,8 @@ public class ExerciseActivity extends FragmentActivity {
 
     ViewPager vp = (ViewPager) findViewById(R.id.pager_exercise);
 
-    final String src = (String) getIntent().getExtras().get("exercise_src");
+    Bundle extras = getIntent().getExtras();
+    final String src = extras.getString(getString(R.string.ex_src));
     final String srcBaseName = src.replace(".xml", "");
 
     try {
@@ -45,6 +46,10 @@ public class ExerciseActivity extends FragmentActivity {
 
     ActionBar actionBar = getActionBar();
     actionBar.setDisplayHomeAsUpEnabled(true);
+    String lesson = extras.getString(getString(R.string.ex_lesson));
+    String drill = extras.getString(getString(R.string.ex_drill));
+    actionBar.setTitle(lesson);
+    actionBar.setSubtitle(drill);
   }
 
   @Override
@@ -58,8 +63,8 @@ public class ExerciseActivity extends FragmentActivity {
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case android.R.id.home:
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Intent intent = new Intent(this, ExerciseMenuActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
         return true;
       case R.id.menu_help:

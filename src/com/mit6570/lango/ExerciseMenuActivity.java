@@ -38,9 +38,13 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
       public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
           int childPosition, long id) {
         Intent intent = new Intent(v.getContext(), ExerciseActivity.class);
-        String drillSrouce = exercises.get(groupPosition).getDrill(childPosition).src();
+        ExerciseMenu lesson = exercises.get(groupPosition);
+        ExerciseMenu drill = lesson.getDrill(childPosition);
+        String drillSrouce = drill.src();
         if (drillSrouce != null) {
-          intent.putExtra("exercise_src", drillSrouce);
+          intent.putExtra(getString(R.string.ex_src), drillSrouce);
+          intent.putExtra(getString(R.string.ex_lesson), lesson.name());
+          intent.putExtra(getString(R.string.ex_drill), drill.name());
           startActivity(intent);
         } else {
           CharSequence text = getString(R.string.unimplemented_msg);
@@ -54,6 +58,7 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     
     ActionBar actionBar = getActionBar();
     actionBar.setDisplayHomeAsUpEnabled(true);
+    actionBar.setTitle("Japanese 502");
   }
   
   @Override

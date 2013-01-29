@@ -23,6 +23,7 @@
     <string name="exercise_instruction">Instructions:</string>
     <string name="record_instruction">Record your answer</string>
     <string name="explanation">Explanation</string>
+    
     <string name="ex_instruction">ex_instruction</string>
     <string name="ex_description">ex_description</string>
     <string name="ex_image">ex_image</string>
@@ -32,8 +33,13 @@
     <string name="ex_question">ex_question</string>
     <string name="ex_record_answer">ex_record_answer</string>
     <string name="ex_basename">ex_basename</string>
+    <string name="ex_src">ex_src</string>
+    <string name="ex_lesson">ex_lesson</string>
+    <string name="ex_drill">ex_drill</string>
+    
     <string name="unimplemented_msg">Coming soon.</string>
     
     <string name="about">Lango is a language app that enables students to do exercises (both speaking and listening) on the go. It synchronizes with the MIT Japanese course curriculum. More features are coming soon.</string>
-    <string name="ex_help">Swipe left and right to view more exercises.</string>
+    <string name="ex_help">Click the record button again to stop recording.
+Swipe left and right to view more exercises.</string>
 </resources>
