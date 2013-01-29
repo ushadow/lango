@@ -98,6 +98,14 @@
                     android:text="@string/explanation" />
 
                 <ToggleButton
+                    android:id="@+id/button_answer"
+                    style="@style/Button_v1"
+                    android:background="@drawable/selector_button_v1"
+                    android:contentDescription="@string/button_playanwser"
+                    android:textOff="A"
+                    android:textOn="A" />
+                
+                <ToggleButton
                     android:id="@+id/button_playanswer"
                     style="@style/PlayerButtonPlayAnswer_v1"
                     android:background="@drawable/selector_button_play_v1"

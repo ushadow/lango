@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Locale;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -13,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -59,7 +61,9 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
       String answerAudio = b.getString(getString(R.string.ex_answer_audio));
       String answer = b.getString(getString(R.string.ex_answer));
-      setupAnswerButton(rootView, R.id.button_playanswer, answerAudio, answer);
+      int showButtonId = answerAudio == null ? R.id.button_answer : R.id.button_playanswer;
+      int hideButtonId = answerAudio == null ? R.id.button_playanswer : R.id.button_answer;
+      setupAnswerButton(rootView, showButtonId, hideButtonId, answerAudio, answer);
 
       String imgFile = b.getString(getString(R.string.ex_image));
       if (imgFile != null) {
@@ -210,9 +214,18 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       }
     }
 
-    private void setupAnswerButton(final View rootView, int buttonId, final String audioFile,
-        final String answer) {
-      final ToggleButton tb = (ToggleButton) rootView.findViewById(buttonId);
+    /**
+     * 
+     * @param rootView
+     * @param showButtonId id of the button to be shown.
+     * @param hideButtonId id of the button to be hidden.
+     * @param audioFile
+     * @param answer
+     */
+    private void setupAnswerButton(final View rootView, int showButtonId, int hideButtonId,
+                                   final String audioFile, final String answer) {
+      final ToggleButton tb = (ToggleButton) rootView.findViewById(showButtonId);
+      rootView.findViewById(hideButtonId).setVisibility(View.GONE);
       tb.setOnClickListener(new OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -229,7 +242,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
               // TODO Auto-generated catch block
               e.printStackTrace();
             }
-          }
+          } 
 
           if (answer != null) {
             if (tb.isChecked()) {
