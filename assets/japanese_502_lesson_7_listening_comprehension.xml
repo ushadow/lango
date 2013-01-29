@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<exercises>
+    <instruction>Answer the questions based on the conversation.  A refers to the first speaker, B the second.</instruction>
+    <exercise>
+        <description audio="audio/304120170259.mp3"></description>
+        <question>a) How many siblings does B have?
+b) What do they do?</question>
+        <answer>A: ご兄弟(きょうだい）はいますか。 
+B: はい、兄（あに）と姉（あね）がいます。 
+A:お兄（にい）さんも東京にいますか。 
+B:いいえ、兄（あに）は神戸（こうべ）の会社に勤めています。姉（あね）は東京の高校（こうこう）で英語（えいご）を教（おし）えています。   
+
+a) How many siblings does B have?  (An older brother and an older sister.) 
+b) What do they do? (Older brother is working for a company in Kobe. Older sister is teaching English at a high school in Tokyo.) 
+        </answer>
+    </exercise>
+</exercises>

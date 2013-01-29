@@ -59,6 +59,7 @@ public class ExerciseActivity extends FragmentActivity {
     switch (item.getItemId()) {
       case android.R.id.home:
         Intent intent = new Intent(this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         return true;
       default:

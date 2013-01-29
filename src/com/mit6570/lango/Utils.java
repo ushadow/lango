@@ -1,6 +1,7 @@
 package com.mit6570.lango;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -27,6 +28,16 @@ public class Utils {
       builder.append(delimiter);
     }
     builder.append(s[s.length - 1]);
+    return builder.toString();
+  }
+  
+  static String join(String delimiter, List<String> s) {
+    StringBuilder builder = new StringBuilder();
+    for (int i = 0; i < s.size() - 1; i++) {
+      builder.append(s.get(i));
+      builder.append(delimiter);
+    }
+    builder.append(s.get(s.size() - 1));
     return builder.toString();
   }
 }

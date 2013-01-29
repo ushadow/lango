@@ -28,6 +28,7 @@
     <string name="ex_description_audio">ex_description_audio</string>
     <string name="ex_answer">ex_answer</string>
     <string name="ex_answer_audio">ex_answer_audio</string>
+    <string name="ex_question">ex_question</string>
     
     <string name="unimplemented_msg">Coming soon.</string>
 

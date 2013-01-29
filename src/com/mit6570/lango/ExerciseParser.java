@@ -19,6 +19,7 @@ public class ExerciseParser {
   private static final String ROOT_TAG = "exercises";
   private static final String ANSWER_TAG = "answer";
   private static final String INSTR_TAG = "instruction";
+  private static final String QUESTION_TAG = "question";
   private static final String AUDIO_ATTRIBUTE = "audio";
   private static final String IMG_ATTRIBUTE = "img";
   
@@ -76,6 +77,8 @@ public class ExerciseParser {
                 currentExe.putString(context.getString(R.string.ex_answer_audio), 
                                      attributes.get(AUDIO_ATTRIBUTE));
                 currentExe.putString(context.getString(R.string.ex_answer), parser.nextText());
+              } else if (name.equalsIgnoreCase(QUESTION_TAG)) {
+                currentExe.putString(context.getString(R.string.ex_question), parser.nextText());
               }
             }
             break;
