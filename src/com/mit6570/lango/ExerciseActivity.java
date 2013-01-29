@@ -63,8 +63,7 @@ public class ExerciseActivity extends FragmentActivity {
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
       case android.R.id.home:
-        Intent intent = new Intent(this, ExerciseMenuActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         return true;
       case R.id.menu_help:

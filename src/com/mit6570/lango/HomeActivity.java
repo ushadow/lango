@@ -27,6 +27,7 @@ public class HomeActivity extends Activity {
         Class<? extends Activity> c = sectionAdapter.getItem(position).activityClass();
         if (c != null) {
           Intent intent = new Intent(view.getContext(), c);
+          intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
           startActivity(intent);
         } else {
           CharSequence text = getString(R.string.unimplemented_msg);
