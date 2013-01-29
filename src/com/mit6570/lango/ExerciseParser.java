@@ -22,11 +22,15 @@ public class ExerciseParser {
   private static final String QUESTION_TAG = "question";
   private static final String AUDIO_ATTRIBUTE = "audio";
   private static final String IMG_ATTRIBUTE = "img";
+  private static final String RECORD_ATTRIBUTE = "record";
   
   private final XmlPullParser parser;
   private final Context context;
   private List<Bundle> exercises;
-  private String instruction;
+  /**
+   * Meta information about he exercises.
+   */
+  private Bundle metaInfo = new Bundle();
 
   /**
    * Creates a parser for exercises.
@@ -43,10 +47,10 @@ public class ExerciseParser {
     isr.close();
   }
   
+  public Bundle metaInfo() { return metaInfo; }
+  
   public List<Bundle> exercises() { return exercises; }
 
-  public String instruction() { return instruction; }
-  
   private void parse() {
     try {
       int eventType = parser.getEventType();
@@ -61,7 +65,14 @@ public class ExerciseParser {
           case XmlPullParser.START_TAG:
             name = parser.getName();
             if (name.equalsIgnoreCase(INSTR_TAG)) {
-              instruction = parser.nextText();
+              Map<String, String> attributes = Utils.attributes(parser);
+              metaInfo.putString(context.getString(R.string.ex_instruction), parser.nextText());
+              String record = attributes.get(RECORD_ATTRIBUTE);
+              if (record != null && record.equalsIgnoreCase("false")) {
+                metaInfo.putBoolean(context.getString(R.string.ex_record_answer), false);
+              } else {
+                metaInfo.putBoolean(context.getString(R.string.ex_record_answer), true);
+              }
             } else if (name.equalsIgnoreCase(EXERCISE_TAG)) {
               currentExe = new Bundle();
             } else if (currentExe != null) {

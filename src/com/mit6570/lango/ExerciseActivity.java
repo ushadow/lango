@@ -31,9 +31,9 @@ public class ExerciseActivity extends FragmentActivity {
       InputStreamReader isr = new InputStreamReader(is);
       ExerciseParser ep = new ExerciseParser(isr, this);
       List<Bundle> exes = ep.exercises();
-
-      ExercisePagerAdapter epa =
-          new ExercisePagerAdapter(this, exes, srcBaseName, ep.instruction());
+      Bundle metaInfo = ep.metaInfo();
+      metaInfo.putString(getString(R.string.ex_basename), srcBaseName);
+      ExercisePagerAdapter epa = new ExercisePagerAdapter(this, exes, metaInfo);
       vp.setAdapter(epa);
     } catch (IOException e) {
       // TODO Auto-generated catch block

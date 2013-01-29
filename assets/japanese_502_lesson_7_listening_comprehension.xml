@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <exercises>
-    <instruction>Answer the questions based on the conversation.  A refers to the first speaker, B the second.</instruction>
+    <instruction record="false">Answer the questions based on the conversation. A refers to the first speaker, B the second.</instruction>
     <exercise>
         <description audio="audio/304120170259.mp3"></description>
         <question>a) How many siblings does B have?

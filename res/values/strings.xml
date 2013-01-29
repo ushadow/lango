@@ -22,13 +22,15 @@
     <string name="record_instruction">Record your answer</string>
     <string name="explanation">Explanation</string>
 
-    <string name="ex_instruction">Instructions:</string>
+    <string name="ex_instruction">ex_instruction</string>
     <string name="ex_description">ex_description</string>
     <string name="ex_image">ex_image</string>
     <string name="ex_description_audio">ex_description_audio</string>
     <string name="ex_answer">ex_answer</string>
     <string name="ex_answer_audio">ex_answer_audio</string>
     <string name="ex_question">ex_question</string>
+    <string name="ex_record_answer">ex_record_answer</string>
+    <string name="ex_basename">ex_basename</string>
     
     <string name="unimplemented_msg">Coming soon.</string>
 

@@ -34,7 +34,8 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     private MediaPlayer questionPlayer, responsePlayer, answerPlayer;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, 
+                             Bundle savedInstanceState) {
       // The last two arguments ensure LayoutParams are inflated
       // properly.
       View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);
@@ -45,7 +46,8 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     private View createView(View rootView, Bundle b) {
       int index = b.getInt(KEY_INDEX);
 
-      String instruction = b.getString(KEY_INSTRUCTION);
+      Bundle metaInfo = b.getBundle(KEY_META);
+      String instruction = metaInfo.getString(getString(R.string.ex_instruction));
       setupText(rootView, R.id.text_instruction, instruction);
 
       // Set exercise description.
@@ -69,10 +71,22 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
         setupText(rootView, R.id.text_question, question);
       }
 
+      boolean isRecordAnswer = metaInfo.getBoolean(getString(R.string.ex_record_answer));
+      if (isRecordAnswer) {
+        setupRecordAnswerUI(rootView, metaInfo, index);
+      } else {
+        View view = rootView.findViewById(R.id.group_record);
+        view.setVisibility(View.GONE);
+      }
+
+      return rootView;
+    }
+
+    private void setupRecordAnswerUI(View rootView, Bundle metaInfo, int index) {
       File appDir =
           new File(Environment.getExternalStorageDirectory(), getString(R.string.app_name));
       appDir.mkdirs();
-      String srcBaseName = b.getString(KEY_BASENAME);
+      String srcBaseName = metaInfo.getString(getString(R.string.ex_basename));
       String audioFile = String.format(Locale.US, "%s_%d.3gp", srcBaseName, index);
       final String audioFileAbsPath = (new File(appDir, audioFile)).getAbsolutePath();
 
@@ -91,9 +105,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
           }
         }
       });
-
       setupPlaybackButton(rootView, R.id.button_playback, audioFileAbsPath);
-      return rootView;
     }
 
     private MediaPlayer createPlayer(final ToggleButton tb) {
@@ -174,9 +186,13 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     }
 
     private void setupPlayQuestionButton(View rootView, int buttonId, String audioFile) {
+      final ToggleButton tb = (ToggleButton) rootView.findViewById(buttonId);
+      if (audioFile == null) {
+        tb.setVisibility(View.GONE);
+        return;
+      }
       try {
         final AssetFileDescriptor afd = getActivity().getAssets().openFd(audioFile);
-        final ToggleButton tb = (ToggleButton) rootView.findViewById(buttonId);
 
         tb.setOnClickListener(new OnClickListener() {
           @Override
@@ -260,20 +276,16 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
   }
 
   private static final String KEY_INDEX = "index";
-  private static final String KEY_BASENAME = "base_name";
-  private static final String KEY_INSTRUCTION = "instruction";
-  private final String baseName;
+  private static final String KEY_META = "meta";
   private final Context context;
   private final List<Bundle> exercises;
-  private final String instruction;
+  private final Bundle metaInfo;
 
-  public ExercisePagerAdapter(FragmentActivity fa, List<Bundle> exercises, String exerciseBaseName,
-      String instruction) {
+  public ExercisePagerAdapter(FragmentActivity fa, List<Bundle> exercises, Bundle metaInfo) {
     super(fa.getSupportFragmentManager());
     context = fa;
     this.exercises = exercises;
-    this.baseName = exerciseBaseName;
-    this.instruction = instruction;
+    this.metaInfo = metaInfo;
   }
 
   @Override
@@ -281,8 +293,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     Fragment fragment = Fragment.instantiate(context, ExericseFragment.class.getName());
     Bundle b = exercises.get(i);
     b.putInt(KEY_INDEX, i + 1);
-    b.putString(KEY_BASENAME, baseName);
-    b.putString(KEY_INSTRUCTION, instruction);
+    b.putBundle(KEY_META, metaInfo);
     fragment.setArguments(b);
     return fragment;
   }

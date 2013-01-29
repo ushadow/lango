@@ -4,7 +4,7 @@
         <drill src="japanese_502_lesson_7_te_iru.xml">te+iru</drill>
         <drill>Particle Review 1</drill>
         <drill>Particle Review 2</drill>
-        <drill>Situational Usage</drill>
+        <drill src="japanese_502_lesson_7_situational_usage.xml">Situational Usage</drill>
         <drill src="japanese_502_lesson_7_listening_comprehension.xml">Listening Comprehension</drill>
     </lesson>
     <lesson name="Lesson 8">
