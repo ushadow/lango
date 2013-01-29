@@ -38,7 +38,13 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter{
      }
 
      TextView tv = (TextView) convertView;
-     tv.setText(exercises.get(groupPosition).getDrill(childPosition).name());
+     ExerciseMenu em = exercises.get(groupPosition).getDrill(childPosition); 
+     tv.setText(em.name());
+     if (em.src() == null) {
+       tv.setTextColor(context.getResources().getColor(R.color.txt_unimplemented));
+     } else {
+       tv.setTextColor(context.getResources().getColor(R.color.txt_black));
+     }
 
      return convertView;
     }

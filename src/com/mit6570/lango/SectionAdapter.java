@@ -35,6 +35,10 @@ public class SectionAdapter extends BaseAdapter {
       return name;
     }
 
+    /**
+     * Class of the activity for this section.
+     * @return
+     */
     public Class<? extends Activity> activityClass() {
       return activityClass;
     }
@@ -88,7 +92,9 @@ public class SectionAdapter extends BaseAdapter {
     iv.setImageResource(section.iconId());
     TextView tv = (TextView) ll.findViewById(R.id.section_text);
     tv.setText(section.name());
-
+    if (section.activityClass() == null) {
+      tv.setTextColor(context.getResources().getColor(R.color.txt_unimplemented));
+    }
     return ll;
   }
 }
