@@ -62,6 +62,9 @@ public class ExerciseActivity extends FragmentActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         return true;
+      case R.id.menu_help:
+        OptionMenuDialog.showHelp(this);
+        return true;
       default:
         return super.onOptionsItemSelected(item);
     }

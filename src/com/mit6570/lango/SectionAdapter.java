@@ -53,7 +53,7 @@ public class SectionAdapter extends BaseAdapter {
     sections.add(new Section(context.getString(R.string.sec_Exercises), R.drawable.ic_exercise,
         ExerciseMenuActivity.class));
     sections.add(new Section(context.getString(R.string.sec_Flashcards), R.drawable.ic_flashcard,
-        FlashcardMenuActivity.class));
+                             null));
     sections.add(new Section(context.getString(R.string.sec_Grammar), R.drawable.ic_grammar, null));
     sections.add(new Section(context.getString(R.string.sec_Vocabulary), R.drawable.ic_vocabulary,
                              null));

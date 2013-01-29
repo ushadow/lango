@@ -1,9 +1,10 @@
 package com.mit6570.lango;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -43,5 +44,15 @@ public class HomeActivity extends Activity {
     getMenuInflater().inflate(R.menu.activity_home, menu);
     return true;
   }
-
+  
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case R.id.menu_about:
+        OptionMenuDialog.showAbout(this);
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
+  }
 }

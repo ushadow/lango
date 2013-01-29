@@ -5,4 +5,12 @@
         <description>Inform that you are married, and have two children.</description>
         <answer audio="audio/950483658890.mp3">結婚しています。そして、子供が二人います。</answer>
     </exercise>
+    <exercise>
+        <description>Tell your colleague that your father and mother live in Boston.</description>
+        <answer audio="audio/955001355921.mp3">父と母はボストンに住んでいます。</answer>
+    </exercise>
+    <exercise>
+        <description>Your colleague asked you to describe how your older sister looks. Tell him/her that she is thin and very tall. </description>
+        <answer audio="audio/405936475451.mp3">やせていて、とても背が高いです。</answer>
+    </exercise>
 </exercises>

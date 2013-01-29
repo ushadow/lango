@@ -2,7 +2,10 @@
 <resources>
 
     <string name="app_name">lango</string>
+    
     <string name="menu_about">About</string>
+    <string name="menu_help">Help</string>
+    
     <string name="title_activity_ExerciseMenu">Exercises</string>
     <string name="title_activity_exercise">Exercise</string>
     <string name="title_activity_FlashcardMenu">Flash Card</string>
@@ -12,16 +15,14 @@
     <string name="sec_Grammar">Grammar</string>
     <string name="sec_Vocabulary">Vocabulary</string>
     <string name="sec_Audio">Audio</string>
-		<string name="button_record">Record</string>
-		<string name="button_playback">Play Back</string>
-		<string name="button_playanwser">Play Answer</string>
-		<string name="button_playquestion">Play Question</string>
+    <string name="button_record">Record</string>
+    <string name="button_playback">Play Back</string>
+    <string name="button_playanwser">Play Answer</string>
+    <string name="button_playquestion">Play Question</string>
     <string name="image_exercise">Exercise Image</string>
-
     <string name="exercise_instruction">Instructions:</string>
     <string name="record_instruction">Record your answer</string>
     <string name="explanation">Explanation</string>
-
     <string name="ex_instruction">ex_instruction</string>
     <string name="ex_description">ex_description</string>
     <string name="ex_image">ex_image</string>
@@ -31,7 +32,8 @@
     <string name="ex_question">ex_question</string>
     <string name="ex_record_answer">ex_record_answer</string>
     <string name="ex_basename">ex_basename</string>
-    
     <string name="unimplemented_msg">Coming soon.</string>
-
+    
+    <string name="about">Lango is a language app that enables students to do exercises (both speaking and listening) on the go. It synchronizes with the MIT Japanese course curriculum. More features are coming soon.</string>
+    <string name="ex_help">Swipe left and right to view more exercises.</string>
 </resources>
