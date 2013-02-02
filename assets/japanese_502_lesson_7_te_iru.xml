@@ -28,8 +28,7 @@
 
         <description
             audio="audio/Lesson07teiru-004.mp3"
-            img="image/40296434265_5.png" >
-        </description>
+            img="image/40296434265_5.png" ></description>
 
         <answer audio="audio/Lesson07teiru-005.mp3" >泳いでいます。
         </answer>
@@ -50,8 +49,7 @@
 
         <description
             audio="audio/Lesson07teiru-008.mp3"
-            img="image/5.png" >
-        </description>
+            img="image/5.png" ></description>
 
         <answer audio="audio/Lesson07teiru-009.mp3" >寝（ね）ています。
         </answer>
@@ -61,8 +59,7 @@
 
         <description
             audio="audio/Lesson07teiru-010.mp3"
-            img="image/6.png" >
-        </description>
+            img="image/6.png" ></description>
 
         <answer audio="audio/Lesson07teiru-011.mp3" >テレビを見ています。
         </answer>
@@ -94,8 +91,7 @@
 
         <description
             audio="audio/Lesson07teiru-016.mp3"
-            img="image/9.png" >
-        </description>
+            img="image/9.png" ></description>
 
         <answer audio="audio/Lesson07teiru-017.mp3" >歌を歌っています。
         </answer>

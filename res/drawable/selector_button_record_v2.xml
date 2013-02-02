@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:state_checked="true" android:state_pressed="true" 
-        	android:drawable="@drawable/bt_bdforestgreen_bkmint50"/> 
+        	android:drawable="@drawable/button_record_focused_v2"/> 
     <item android:state_pressed="true" 
-        	android:drawable="@drawable/bt_bdforestgreen_bkmint50"/> 
+        	android:drawable="@drawable/button_record_focused_v2"/> 
     <item android:state_checked="true" 
-          android:drawable="@drawable/bt_bdforestgreen"/> 
-    <item android:drawable="@drawable/bt_bdhoneydew3"/> 
+          android:drawable="@drawable/button_record_checked_v2"/> 
+    <item android:drawable="@drawable/button_record_normal_v2"/> 
 
 </selector>
