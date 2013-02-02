@@ -40,7 +40,7 @@
                     style="@style/PlayerButtonPlayQuestion_v1"
                     android:background="@drawable/selector_button_play_v1"
                     android:contentDescription="@string/button_playquestion"
-                    android:gravity="left|center_vertical" />
+                    android:gravity="center" />
             </LinearLayout>
 
             <TextView
@@ -122,28 +122,32 @@
 
         <LinearLayout style="@style/ExerciseBox" >
 
-            <LinearLayout style="@style/fullWidth" >
+            <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/text_explanation"
-                    style="@style/ExerciseText"
-                    android:fontFamily="Times New Roman"
-                    android:text="@string/explanation" />
+<!--                 <TextView -->
+<!--                     android:id="@+id/text_explanation" -->
+<!--                     style="@style/ExerciseText" -->
+<!--                     android:fontFamily="Times New Roman" -->
+<!--                     android:text="@string/explanation" /> -->
 
                 <ToggleButton
                     android:id="@+id/button_answer"
                     style="@style/Button_v1"
                     android:background="@drawable/selector_button_v1"
                     android:contentDescription="@string/button_playanwser"
-                    android:textOff="Show"
-                    android:textOn="Hide" />
+                    android:textOff="Explanation"
+                    android:textOn="Explanation" 
+                    android:layout_weight="1"/>
 
                 <ToggleButton
                     android:id="@+id/button_playanswer"
                     style="@style/PlayerButtonPlayAnswer_v1"
                     android:background="@drawable/selector_button_play_v1"
                     android:contentDescription="@string/button_playanwser"
-                    android:gravity="left|center_vertical" />
+                    android:gravity="center" 
+                    android:layout_weight="1"/>
             </LinearLayout>
 
             <TextView

@@ -95,8 +95,8 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:layout_marginRight">5dp</item>
-        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
         <item name="android:paddingRight">20dp</item>
         <item name="android:gravity">center</item>
     </style>
@@ -106,10 +106,10 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:layout_marginRight">5dp</item>
-        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
         <item name="android:paddingRight">33dp</item>
-        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:gravity">center</item>
     </style>
 
     <style name="PlayerButtonRecord_v1" parent="@style/PlayerButton_v1">
@@ -123,8 +123,8 @@
     </style>
 
     <style name="PlayerButtonPlayAnswer_v1" parent="@style/PlayerButton_v1">
-        <item name="android:textOn">A</item>
-        <item name="android:textOff">A</item>
+        <item name="android:textOn">Explanation</item>
+        <item name="android:textOff">Explanation</item>
     </style>
 
     <style name="PlayerButtonPlayBack_v1" parent="@style/PlayerButton_v1">
