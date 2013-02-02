@@ -29,18 +29,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" >
 
+                <TextView
+                    android:id="@+id/text_description"
+                    style="@style/ExerciseText"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical" />
+
                 <ToggleButton
                     android:id="@+id/button_playquestion"
                     style="@style/PlayerButtonPlayQuestion_v1"
                     android:background="@drawable/selector_button_play_v1"
                     android:contentDescription="@string/button_playquestion"
                     android:gravity="left|center_vertical" />
-
-                <TextView
-                    android:id="@+id/text_description"
-                    style="@style/ExerciseText"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center_vertical" />
             </LinearLayout>
 
             <TextView
@@ -63,25 +63,58 @@
                 android:gravity="left"
                 android:paddingTop="4dp" >
 
-                <TextView
-                    android:id="@+id/text_recordnplayback"
-                    style="@style/ExerciseText"
-                    android:fontFamily="Times New Roman"
-                    android:text="@string/record_instruction" />
+<!--                 <TextView -->
+<!--                     android:id="@+id/text_recordnplayback" -->
+<!--                     style="@style/ExerciseText" -->
+<!--                     android:fontFamily="Times New Roman" -->
+<!--                     android:text="@string/record_instruction" /> -->
 
-                <ToggleButton
-                    android:id="@+id/button_record"
-                    style="@style/PlayerButtonRecord_v1"
-                    android:background="@drawable/selector_button_record_v1"
-                    android:contentDescription="@string/button_record"
-                    android:gravity="left|center_vertical" />
+                <LinearLayout
+                    android:id="@+id/group_recordnplaybackbuttons"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="0dp"
+                    android:layout_margin="0dp" >
+                    
+                    <ToggleButton
+                        android:id="@+id/button_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_button_record_v1"
+                        android:contentDescription="@string/button_record"
+                        android:gravity="center" 
+                        android:textOn="Record"
+                        android:textOff="Record"/>
 
-                <ToggleButton
-                    android:id="@+id/button_playback"
-                    style="@style/PlayerButtonPlayBack_v1"
-                    android:background="@drawable/selector_button_play_v1"
-                    android:contentDescription="@string/button_playback"
-                    android:gravity="left|center_vertical" />
+                    <ToggleButton
+                        android:id="@+id/button_playback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_button_play_v1"
+                        android:contentDescription="@string/button_playback"
+                        android:gravity="center" 
+                        android:textOn="Play Back"
+                        android:textOff="Play Back"/>
+
+<!--                     <ToggleButton -->
+<!--                         android:id="@+id/button_record" -->
+<!--                         style="@style/PlayerButtonRecord_v1" -->
+<!--                         android:background="@drawable/selector_button_record_v1" -->
+<!--                         android:contentDescription="@string/button_record" -->
+<!--                         android:gravity="left|center_vertical" /> -->
+
+<!--                     <ToggleButton -->
+<!--                         android:id="@+id/button_playback" -->
+<!--                         style="@style/PlayerButtonPlayBack_v1" -->
+<!--                         android:background="@drawable/selector_button_play_v1" -->
+<!--                         android:contentDescription="@string/button_playback" -->
+<!--                         android:gravity="left|center_vertical" /> -->
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -102,9 +135,9 @@
                     style="@style/Button_v1"
                     android:background="@drawable/selector_button_v1"
                     android:contentDescription="@string/button_playanwser"
-                    android:textOff="A"
-                    android:textOn="A" />
-                
+                    android:textOff="Show"
+                    android:textOn="Hide" />
+
                 <ToggleButton
                     android:id="@+id/button_playanswer"
                     style="@style/PlayerButtonPlayAnswer_v1"

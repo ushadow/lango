@@ -92,7 +92,7 @@
     </style>
 
      <style name="Button_v1" parent="android:attr/borderlessButtonStyle">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:layout_marginRight">5dp</item>
@@ -103,7 +103,7 @@
     
     <!-- Exercise Media player button theme v1 -->
     <style name="PlayerButton_v1" parent="android:attr/borderlessButtonStyle">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:layout_marginRight">5dp</item>
