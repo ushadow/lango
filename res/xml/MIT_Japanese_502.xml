@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<course name="MIT Japanese 502">
+<lesson name="Lesson 7">
+<drill src="MIT_Japanese_502_Lesson_7_te_iru.xml">te+iru</drill>
+<drill src="MIT_Japanese_502_Lesson_7_Particle_Reriew_1.xml">Particle Reriew 1</drill>
+<drill src="MIT_Japanese_502_Lesson_7__Particle_Review_2.xml"> Particle Review 2</drill>
+<drill src="MIT_Japanese_502_Lesson_7_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_502_Lesson_7_Listening_Comprehension.xml">Listening Comprehension</drill>
+</lesson>
+<lesson name="Lesson 8">
+<drill src="MIT_Japanese_502_Lesson_8_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_502_Lesson_8_Listening_Comprehension.xml">Listening Comprehension</drill>
+</lesson>
+<lesson name="Lesson 9">
+<drill src="MIT_Japanese_502_Lesson_9__affirmative_1.xml">と思う(affirmative)1</drill>
+<drill src="MIT_Japanese_502_Lesson_9__affirmative_2.xml">と思う(affirmative)2</drill>
+<drill src="MIT_Japanese_502_Lesson_9__negative.xml">と思う(negative)</drill>
+<drill src="MIT_Japanese_502_Lesson_9__affirmative_negative.xml">(affirmative+negative)</drill>
+<drill src="MIT_Japanese_502_Lesson_9_Counting.xml">Counting</drill>
+<drill src="MIT_Japanese_502_Lesson_9_Qualifying_Nouns.xml">Qualifying Nouns</drill>
+<drill src="MIT_Japanese_502_Lesson_9_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_502_Lesson_9_Listening_Comprehension.xml">Listening Comprehension</drill>
+</lesson>
+<lesson name="Lesson 10">
+<drill src="MIT_Japanese_502_Lesson_10_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_502_Lesson_10_Listening_Comprehension.xml">Listening Comprehension</drill>
+</lesson>
+<lesson name="Lesson 11">
+<drill src="MIT_Japanese_502_Lesson_11__and_counters.xml">もう／もっと and counters</drill>
+<drill src="MIT_Japanese_502_Lesson_11_Double_Particles.xml">Double Particles</drill>
+<drill src="MIT_Japanese_502_Lesson_11_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_502_Lesson_11_Listening_Comprehension.xml">Listening Comprehension</drill>
+</lesson>
+<lesson name="Lesson 12">
+<drill src="MIT_Japanese_502_Lesson_12_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_502_Lesson_12_Listening_Comprehension.xml">Listening Comprehension</drill>
+</lesson>
+</course>
