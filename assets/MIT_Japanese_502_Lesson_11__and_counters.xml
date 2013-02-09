@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises>
+<instruction>You are at a store.  Ask a shop clerk for the specified items.  Record your voice.  Example: Ask for 2 pensペンを二本ください。</instruction>
+<exercise>
+<question  >Ask for 8 cake.
+</question>
+<answer audio="audio/737217543720.mp3">ケーキを八つください。</answer>
+</exercise>
+<exercise>
+<question  >Ask 5 red pens
+</question>
+<answer audio="audio/672865210174.mp3">赤あかいペンを五本ください。</answer>
+</exercise>
+<exercise>
+<question  >Ask for 2 cheese cakes
+</question>
+<answer audio="audio/233623359658.mp3">チーズケーキを二つください。</answer>
+</exercise>
+<exercise>
+<question  >Ask for 18 green sheets of paper. 
+</question>
+<answer audio="audio/215843207509.mp3">緑みどりの紙かみを１８枚まい下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for 4 yellow notebooks.
+</question>
+<answer audio="audio/663342214728.mp3">黄色きいろいノートを四冊さつ下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for a larger keyboard. 
+</question>
+<answer audio="audio/392917899721.mp3">もっと大きいキーボードを下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for one more chocolate mousse. 
+</question>
+<answer audio="audio/105259987133.mp3">チョコレートムースをもう一つ下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for two more notebooks.
+</question>
+<answer audio="audio/474801366756.mp3">ノートをもう二冊さつ下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for a cheaper pen. 
+</question>
+<answer audio="audio/649106638346.mp3">もっと安いペンを下さい。</answer>
+</exercise>
+<exercise>
+<question  >At a restaurant, ask for 1 coffee and 2 cheeseburger. 
+</question>
+<answer audio="audio/440714669487.mp3">コーヒーを一つとチーズバーガーを二つ下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for 3 black pens and 20 sheets of light blue paper. 
+</question>
+<answer audio="audio/947922620763.mp3">黒くろいペンを三本と水色いろの紙かみを二十枚まい下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for a smaller, more cute umbrella. 
+</question>
+<answer audio="audio/979256971114.mp3">もっと小さくてかわいい傘かさを下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for a more beautiful-colored wallet. 
+</question>
+<answer audio="audio/104659817953.mp3">もっときれいな色いろの財布さいふを下さい。</answer>
+</exercise>
+<exercise>
+<question  >Ask for five more brown notebooks. 
+</question>
+<answer audio="audio/598462732349.mp3">茶色ちゃいろのノートをもう五冊さつ下さい。</answer>
+</exercise>
+</exercises>

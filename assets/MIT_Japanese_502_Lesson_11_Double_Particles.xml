@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises>
+<instruction>Listen to the questions and respond them accordingly. Record your answers and compare them with the model answers.Example: Q: スーパーとデパートで買い物ものしましたか。(at a supermarket but not at a department store)A: いえ、スーパーでは買い物しましたけど、デパートではしませんでした。</instruction>
+<exercise>
+<question audio="audio/300089905577.mp3" >(Monday, but not Tuesday)
+</question>
+<answer audio="audio/562632942645.mp3">Q:月曜日と火曜日に行きますか。
+A:いえ、月曜日には行きますけど、火曜日には行きません。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/598066650637.mp3" >(both at lakes and rivers)
+</question>
+<answer audio="audio/616169047615.mp3">Q:湖みずうみで泳およぎましたか。川で泳およぎましたか。
+A:湖みずうみでも川でも泳およぎました。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/955875083644.mp3" >(to friend, but not to
+teacher)
+</question>
+<answer audio="audio/477761536677.mp3">Q:友だちと先生に手紙を書きましたか。
+A:いえ、友だちには書きましたけど、先生には書きませんでした。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/698930567436.mp3" >(at the library, but not at
+the cafe)
+</question>
+<answer audio="audio/653000308507.mp3">Q:図書館としょかんでも喫茶店きっさてんでも勉強しますか。
+A:いえ、図書館としょかんでは勉強しますけど、喫茶店きっさてんでは勉強しません。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/437537210601.mp3" >(both father and mother)
+</question>
+<answer audio="audio/357976727959.mp3">Q:お父さんとだけ話しましたか。
+A:いえ、父とも母とも話しました。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/125158274154.mp3" >(to Korea, but not to Taiwan)
+</question>
+<answer audio="audio/594036705865.mp3">Q:韓国かんこくと台湾たいわんに行きましたね。
+A:いえ、韓国かんこくには行きましたけど、台湾たいわんには行きませんでした。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/821359034701.mp3" >(both in English and in
+Chinese)
+</question>
+<answer audio="audio/513924120766.mp3">Q:ご両親りょうしんとは英語で話しますか。中国語で話しますか。
+A:英語でも中国語でも話します。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/823421601279.mp3" >(Hiragana, but not katakana)
+</question>
+<answer audio="audio/154044402138.mp3">Q:ひらがなとかたかなで書きましたか。
+A:いえ、ひらがなでは書きましたけど、かたかなでは書きませんでした。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/6167732020.mp3" >(both from Tanaka and Yamamoto)
+</question>
+<answer audio="audio/397173998951.mp3">Q:誕生日たんじょうびのプレゼントは、田中さんにもらいましたか。山本さんにもらいましたか。
+A:田中さんにも山本さんにももらいました。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/558197470455.mp3" >(for breakfast, but not for
+dinner)
+</question>
+<answer audio="audio/230137500519.mp3">Q:朝ご飯はんと晩ご飯はんにパンを食べますか。
+A:パンですか。いえ、朝ご飯には食べますけど、晩ご飯には食べません。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/232858603428.mp3" >(with my older brother, but
+not with my younger brother)
+</question>
+<answer audio="audio/740074106798.mp3">Q:お兄にいさんとも弟おとうとさんとも出かけましたか。
+A:いえ、兄あにとは出かけましたけど、弟おとうととは出かけませんでした。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/512074318555.mp3" >(to England, but not to
+France)
+</question>
+<answer audio="audio/887649963916.mp3">Q：イギリスとフランスに旅行りょこうしたことがありますね。
+A:いえ、イギリスには旅行りょこうしたことがありますけど、フランスには（旅行りょこうしたことが）ありません。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/216883171423.mp3" >(Mon-Wed, but not Thurs and
+Fri)
+</question>
+<answer audio="audio/743336717438.mp3">Q:月曜日から金曜日まで働はたらくつもり？
+A:ううん、月曜日から水曜日までは働くつもりだけど、木曜日と金曜日には働かないつもり。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/188592121777.mp3" >(both bus and subway)
+</question>
+<answer audio="audio/674178121452.mp3">Q:バスに乗のりましたか。地下鉄ちかてつに乗のりましたか。
+A:バスにも地下鉄ちかてつにも乗のりました。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/948040882199.mp3" >(with Tanaka, but not Yamamoto)
+</question>
+<answer audio="audio/764739995895.mp3">Q:週末しゅうまつに田中さんと山本さんに会いますね。
+A: いえ、田中さんには会いますけど、山本さんには会いません。
+</answer>
+</exercise>
+<exercise>
+<question audio="audio/96548328016.mp3" >(also to Osaka and Kyoto)
+</question>
+<answer audio="audio/744976663104.mp3">Q:東京にだけ行きましたか。
+A:いえ、大阪おおさかと京都とにも行きましたよ。
+</answer>
+</exercise>
+</exercises>

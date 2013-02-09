@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises>
+<instruction>Listen to the questions and respond them.</instruction>
+<exercise>
+<question audio="audio/559952211174.mp3" img="image/40296434265_1.png">(buying ice cream)
+</question>
+<answer audio="audio/35589773980.mp3">アイスクリームを買かっています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/88859620810.mp3" img="image/40296434265_14.png">(playing computer game)
+</question>
+<answer audio="audio/952964891287.mp3">コンピューターゲームをしています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/233654921482.mp3" img="image/40296434265_5.png">
+</question>
+<answer audio="audio/676724135250.mp3">泳およいでいます。</answer>
+</exercise>
+<exercise>
+<question audio="audio/331794988437.mp3" img="image/40296434265_6.png">(drinking water)
+</question>
+<answer audio="audio/452266968860.mp3">水を飲んでいます。</answer>
+</exercise>
+<exercise>
+<question audio="audio/103098424923.mp3" img="image/40296434265_10.png">
+</question>
+<answer audio="audio/737555121843.mp3">寝ねています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/545999386188.mp3" img="image/40296434265_11.png">
+</question>
+<answer audio="audio/28534945639.mp3">テレビを見ています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/911831106365.mp3" img="image/40296434265_12.png">(talking with friend)
+</question>
+<answer audio="audio/343052980098.mp3">友だちと話しています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/145009022512.mp3" img="image/40296434265_13.png">(waiting for bus)
+</question>
+<answer audio="audio/101801144265.mp3"></answer>
+</exercise>
+<exercise>
+<question audio="audio/330326764918.mp3" img="image/40296434265_15.png">
+</question>
+<answer audio="audio/911869249845.mp3">歌うたを歌うたっています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/370556027003.mp3" img="image/40296434265_16.png">(teaching piano)
+</question>
+<answer audio="audio/138939191195.mp3">ピアノを教おしえています。</answer>
+</exercise>
+<exercise>
+<question audio="audio/89536482774.mp3" img="image/40296434265_17.png">(reading newspaper)
+</question>
+<answer audio="audio/936319997607.mp3">新聞しんぶんを読よんでいます。</answer>
+</exercise>
+<exercise>
+<question audio="audio/382712107458.mp3" img="image/40296434265_18.png">（writing  Japanese)
+</question>
+<answer audio="audio/96773154175.mp3">日本語を書いています。</answer>
+</exercise>
+</exercises>

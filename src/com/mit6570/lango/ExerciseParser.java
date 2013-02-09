@@ -15,7 +15,6 @@ import android.util.Xml;
 
 public class ExerciseParser {
   private static final String EXERCISE_TAG = "exercise";
-  private static final String DESCRIPTION_TAG = "description";
   private static final String ROOT_TAG = "exercises";
   private static final String ANSWER_TAG = "answer";
   private static final String INSTR_TAG = "instruction";
@@ -76,21 +75,19 @@ public class ExerciseParser {
             } else if (name.equalsIgnoreCase(EXERCISE_TAG)) {
               currentExe = new Bundle();
             } else if (currentExe != null) {
-              if (name.equalsIgnoreCase(DESCRIPTION_TAG)) {
+              if (name.equalsIgnoreCase(QUESTION_TAG)) {
                 Map<String, String> attributes = Utils.attributes(parser);
                 currentExe.putString(context.getString(R.string.ex_description_audio), 
                                      attributes.get(AUDIO_ATTRIBUTE));
                 currentExe.putString(context.getString(R.string.ex_image), 
                                      attributes.get(IMG_ATTRIBUTE));
-                currentExe.putString(context.getString(R.string.ex_description), parser.nextText());
+                currentExe.putString(context.getString(R.string.ex_question), parser.nextText());
               } else if (name.equalsIgnoreCase(ANSWER_TAG)) {
                 Map<String, String> attributes = Utils.attributes(parser);
                 currentExe.putString(context.getString(R.string.ex_answer_audio), 
                                      attributes.get(AUDIO_ATTRIBUTE));
                 currentExe.putString(context.getString(R.string.ex_answer), parser.nextText());
-              } else if (name.equalsIgnoreCase(QUESTION_TAG)) {
-                currentExe.putString(context.getString(R.string.ex_question), parser.nextText());
-              }
+              } 
             }
             break;
           case XmlPullParser.END_TAG:

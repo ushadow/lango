@@ -23,6 +23,8 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
   private static final String DRILL_TAG = "drill";
   private static final String NAME_ATTRIBUTE = "name";
   private static final String SRC_ATTRIBUTE = "src";
+  
+  private String courseName = "";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     
     ActionBar actionBar = getActionBar();
     actionBar.setDisplayHomeAsUpEnabled(true);
-    actionBar.setTitle("Japanese 502");
+    actionBar.setTitle(courseName);
   }
   
   @Override
@@ -76,7 +78,7 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
   private List<ExerciseMenu> parseXml() {
     List<ExerciseMenu> exercises = null;
     try {
-      XmlPullParser parser = this.getResources().getXml(R.xml.japanese_502);
+      XmlPullParser parser = this.getResources().getXml(R.xml.mit_japanese_502);
       int eventType = parser.getEventType();
       boolean done = false;
       ExerciseMenu currentExe = null;
@@ -96,6 +98,8 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
                 String src = Utils.attributes(parser).get(SRC_ATTRIBUTE);
                 currentExe.add(new ExerciseMenu(parser.nextText(), src));
               }
+            } else if (name.equalsIgnoreCase(ROOT_TAG)) {
+              courseName = Utils.attributes(parser).get(NAME_ATTRIBUTE);
             }
             break;
           case XmlPullParser.END_TAG:

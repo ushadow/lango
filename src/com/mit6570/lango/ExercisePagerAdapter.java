@@ -53,9 +53,6 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       setupText(rootView, R.id.text_instruction, instruction);
 
       // Set exercise description.
-      String description = b.getString(getString(R.string.ex_description));
-      setupText(rootView, R.id.text_description, description);
-
       String questionAudio = b.getString(getString(R.string.ex_description_audio));
       setupPlayQuestionButton(rootView, R.id.button_playquestion, questionAudio);
 
