@@ -15,6 +15,7 @@
     <string name="sec_Grammar">Grammar</string>
     <string name="sec_Vocabulary">Vocabulary</string>
     <string name="sec_Audio">Audio</string>
+    <string name="sec_Kangji">Kangji</string>
     <string name="button_record">Record</string>
     <string name="button_playback">Play Back</string>
     <string name="button_playanwser">Play Answer</string>

@@ -62,6 +62,7 @@ public class SectionAdapter extends BaseAdapter {
     sections.add(new Section(context.getString(R.string.sec_Vocabulary), R.drawable.ic_vocabulary,
                              null));
     sections.add(new Section(context.getString(R.string.sec_Audio), R.drawable.ic_audio, null));
+    sections.add(new Section(context.getString(R.string.sec_Kangji), R.drawable.ic_kangji, null));
   }
 
   public int getCount() {
