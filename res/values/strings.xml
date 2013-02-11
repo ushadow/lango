@@ -10,12 +10,13 @@
     <string name="title_activity_exercise">Exercise</string>
     <string name="title_activity_FlashcardMenu">Flash Card</string>
     <string name="title_activity_Flashcard">Flash Card</string>
+     <string name="title_activity_Kanji">Kanji</string>
     <string name="sec_Exercises">Exercise</string>
     <string name="sec_Flashcards">Flash Card</string>
     <string name="sec_Grammar">Grammar</string>
     <string name="sec_Vocabulary">Vocabulary</string>
     <string name="sec_Audio">Audio</string>
-    <string name="sec_Kangji">Kangji</string>
+    <string name="sec_Kangji">Kanji</string>
     <string name="button_record">Record</string>
     <string name="button_playback">Play Back</string>
     <string name="button_playanwser">Play Answer</string>
@@ -37,6 +38,8 @@
     <string name="ex_src">ex_src</string>
     <string name="ex_lesson">ex_lesson</string>
     <string name="ex_drill">ex_drill</string>
+    
+    <string name="kanji_lesson">kanji_lesson</string>
     
     <string name="unimplemented_msg">Coming soon.</string>
     
