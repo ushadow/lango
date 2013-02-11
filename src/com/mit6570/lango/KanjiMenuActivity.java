@@ -1,19 +1,18 @@
 package com.mit6570.lango;
 
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-
 public class KanjiMenuActivity extends Activity {
 
-	private String courseName = "";
+	private String courseName = "Kangji";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +38,19 @@ public class KanjiMenuActivity extends Activity {
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		actionBar.setTitle(courseName);
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent intent = new Intent(this, HomeActivity.class);
+			startActivity(intent);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
 }
-// @Override
-// public boolean onOptionsItemSelected(MenuItem item) {
-// switch (item.getItemId()) {
-// case android.R.id.home:
-// Intent intent = new Intent(this, HomeActivity.class);
-// startActivity(intent);
-// return true;
-// default:
-// return super.onOptionsItemSelected(item);
-// }
-// }
 //
 // private List<ExerciseMenu> parseXml() {
 // List<ExerciseMenu> exercises = null;

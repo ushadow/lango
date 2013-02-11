@@ -163,7 +163,18 @@
         <item name="android:paddingTop">4dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
+    
+    <!-- Kanji layout paper title stripe theme -->
+    <style name="KanjiPagerTitleStripe">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:background">@color/bk_forestGreen</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
     <style name="seporator">
         <item name="android:layout_width">fill_parent</item> 
         <item name="android:layout_height">0.2dp</item>

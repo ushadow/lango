@@ -21,8 +21,8 @@ public class KanjiActivity extends FragmentActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_exercise);
 
-//    ViewPager vp = (ViewPager) findViewById(R.id.pager_exercise);
-//
+    ViewPager vp = (ViewPager) findViewById(R.id.pager_kanji);
+
 //    Bundle extras = getIntent().getExtras();
 //    final String src = extras.getString(getString(R.string.ex_src));
 //    final String srcBaseName = src.replace(".xml", "");
