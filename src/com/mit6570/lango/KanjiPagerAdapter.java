@@ -46,7 +46,6 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 		context = fa;
 		this.kanjis = kanjis;
 		this.metaInfo = metaInfo;
-		Log.d("KANJI PAGER ADAPTER", "entered");
 	}
 
 	public static class KanjiFragment extends Fragment {
@@ -57,7 +56,6 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 			// The last two arguments ensure LayoutParams are inflated
 			// properly.
 			
-			Log.d("KANJI PAGER ADAPTER", "entered onCreateView");
 			
 			View rootView = inflater.inflate(R.layout.fragment_kanji,
 					container, false);
@@ -69,7 +67,6 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 
 		private View createView(View rootView, Bundle b) {
 
-			Log.d("KANJI PAGER ADAPTER", "entered createView of onCreateView");
 			
 			Bundle metaInfo = b.getBundle(KEY_META);
 //			String instruction = metaInfo
@@ -95,13 +92,7 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 				setupText(rootView, R.id.kanji_compound6, b.getString(getString(R.string.kanji_compound6)));
 			}
 
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
-//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+
 
 			// String question = b.getString(getString(R.string.ex_question));
 			// if (question != null) {
@@ -121,10 +112,10 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 
 	@Override
 	public Fragment getItem(int i) {
-		Log.d("KANJI PAGER ADAPTER", "entered getItem");
+
 		Fragment fragment = Fragment.instantiate(context,
 				KanjiFragment.class.getName());
-//		Fragment fragment=new KanjiFragment();
+
 		Bundle b = kanjis.get(i);
 		b.putInt(KEY_INDEX, i + 1);
 		b.putBundle(KEY_META, metaInfo);
@@ -134,13 +125,13 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 
 	@Override
 	public int getCount() {
-		Log.d("KANJI PAGER ADAPTER", "entered getCount");
+
 		return kanjis.size();
 	}
 
 	@Override
 	public CharSequence getPageTitle(int position) {
-		Log.d("KANJI PAGER ADAPTER", "entered getPageTitle");
+
 		return String.format(Locale.US, "%d / %d", position + 1, kanjis.size());
 	}
 }

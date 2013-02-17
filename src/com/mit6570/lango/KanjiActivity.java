@@ -16,6 +16,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class KanjiActivity extends FragmentActivity {
 	private static final String TAG = "Kanji Activity";
@@ -24,9 +25,8 @@ public class KanjiActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_kanji);
 
-//		ViewPager vp = (ViewPager) findViewById(R.id.pager_kanji);
+		// ViewPager vp = (ViewPager) findViewById(R.id.pager_kanji);
 
 		Bundle extras = getIntent().getExtras();
 		String kanji_lesson = extras
@@ -35,6 +35,8 @@ public class KanjiActivity extends FragmentActivity {
 		String src = kanjiSrc(kanji_lesson);
 
 		if (kanji_lesson.equalsIgnoreCase(getString(R.string.kanji_lesson_7))) {
+			setContentView(R.layout.activity_kanji);
+
 			Log.d(TAG, src);
 
 			String srcBaseName = src.replace(".xml", "");
@@ -42,41 +44,35 @@ public class KanjiActivity extends FragmentActivity {
 			try {
 				InputStream is = getAssets().open(src);
 				InputStreamReader isr = new InputStreamReader(is);
-				
-				Log.d(TAG, "BEFORE calling parser");
-				
-			
+
 				KanjiParser kp = new KanjiParser(isr, this);
-				
-				Log.d(TAG, "AFTER calling parser");
-				
+
 				List<Bundle> kanjis = kp.kanjis();
 				Bundle metaInfo = new Bundle();
-				
-				metaInfo.putString(getString(R.string.kanji_lesson), kanji_lesson);
-				
-				Log.d(TAG, "BEFORE calling KanjiPagerAdapter");
-				
+
+				metaInfo.putString(getString(R.string.kanji_lesson),
+						kanji_lesson);
+
 				KanjiPagerAdapter kpa = new KanjiPagerAdapter(this, kanjis,
 						metaInfo);
-				Log.d(TAG, "AFTER calling KanjiPagerAdapter");
-				
-				Log.d(TAG, "before setting KanjiPagerAdapter");
-				
+
 				vp = (ViewPager) findViewById(R.id.pager_kanji);
 				vp.setAdapter(kpa);
-				
-				
-				Log.d(TAG, "AFTER setting KanjiPagerAdapter");
-				
+
 			} catch (IOException e) {
-				Log.d(TAG, "ERRORERRORERRORERROR");
+
 				e.printStackTrace();
 			} catch (XmlPullParserException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
+		} else {
+			CharSequence text = getString(R.string.unimplemented_msg);
+			int duration = Toast.LENGTH_SHORT;
+			Toast toast = Toast.makeText(getApplicationContext(), text,
+					duration);
+			toast.show();
 		}
 
 		// final String srcBaseName = src.replace(".xml", "");
@@ -99,12 +95,12 @@ public class KanjiActivity extends FragmentActivity {
 		// e.printStackTrace();
 		// }
 		//
-		// ActionBar actionBar = getActionBar();
-		// actionBar.setDisplayHomeAsUpEnabled(true);
-		// String lesson = extras.getString(getString(R.string.ex_lesson));
-		// String drill = extras.getString(getString(R.string.ex_drill));
-		// actionBar.setTitle(lesson);
-		// actionBar.setSubtitle(drill);
+		 ActionBar actionBar = getActionBar();
+		 actionBar.setDisplayHomeAsUpEnabled(true);
+		 String kl = extras.getString(getString(R.string.kanji_lesson));
+
+		 actionBar.setTitle("Kanji");
+		 actionBar.setSubtitle(kl);
 	}
 
 	@Override
