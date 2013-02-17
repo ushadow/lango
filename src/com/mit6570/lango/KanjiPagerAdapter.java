@@ -25,6 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -76,18 +77,43 @@ public class KanjiPagerAdapter extends FragmentStatePagerAdapter {
 //			
 //			Log.d("KANJI PAGER ADAPTER", instruction.concat("BEFORE is instruction"));
 			
-			setupText(rootView, R.id.kanji_text, b.getString(getString(R.string.kanji_kanji)));
+			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+			setupText(rootView, R.id.kanji_meaning, b.getString(getString(R.string.kanji_meaning)));
+			setupText(rootView, R.id.kanji_on_yomi, b.getString(getString(R.string.kanji_on_yomi)));
+			setupText(rootView, R.id.kanji_kun_yomi, b.getString(getString(R.string.kanji_kun_yomi)));
+			setupText(rootView, R.id.kanji_compound1, b.getString(getString(R.string.kanji_compound1)));
+			setupText(rootView, R.id.kanji_compound2, b.getString(getString(R.string.kanji_compound2)));
+			setupText(rootView, R.id.kanji_compound3, b.getString(getString(R.string.kanji_compound3)));
+			
+			if (b.containsKey(getString(R.string.kanji_compound4))){
+				setupText(rootView, R.id.kanji_compound4, b.getString(getString(R.string.kanji_compound4)));
+			}
+			if (b.containsKey(getString(R.string.kanji_compound5))){
+				setupText(rootView, R.id.kanji_compound5, b.getString(getString(R.string.kanji_compound5)));
+			}
+			if (b.containsKey(getString(R.string.kanji_compound6))){
+				setupText(rootView, R.id.kanji_compound6, b.getString(getString(R.string.kanji_compound6)));
+			}
+
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
+//			setupText(rootView, R.id.kanji_kanji, b.getString(getString(R.string.kanji_kanji)));
 
 			// String question = b.getString(getString(R.string.ex_question));
 			// if (question != null) {
 			// setupText(rootView, R.id.text_question, question);
 			// }
+			
+
 
 			return rootView;
 		}
 
 		private void setupText(View rootView, int id, String text) {
-			Log.d("KANJI PAGER ADAPTER", "entered setupText");
 			TextView tv = (TextView) rootView.findViewById(id);
 			tv.setText(text);
 		}
