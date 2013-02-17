@@ -20,6 +20,7 @@ import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -296,6 +297,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     context = fa;
     this.exercises = exercises;
     this.metaInfo = metaInfo;
+    Log.d("EXERCISE PAGER ADAPTER", "entered ");
   }
 
   @Override

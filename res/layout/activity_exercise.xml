@@ -8,90 +8,90 @@
         android:id="@+id/pager_title_strip"
         style="@style/ExercisePagerTitleStripe"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+<!--     <LinearLayout -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" > -->
 
-        <TextView
-            android:id="@+id/text_instruction"
-            style="@style/ExerciseText"
-            android:fontFamily="Times New Roman"
-            android:text="@string/exercise_instruction" />
+<!--         <TextView -->
+<!--             android:id="@+id/text_instruction" -->
+<!--             style="@style/ExerciseText" -->
+<!--             android:fontFamily="Times New Roman" -->
+<!--             android:text="@string/exercise_instruction" /> -->
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
+<!--         <LinearLayout -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="wrap_content" > -->
 
-            <TextView
-                android:id="@+id/text_description"
-                style="@style/ExerciseText"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical" />
+<!--             <TextView -->
+<!--                 android:id="@+id/text_description" -->
+<!--                 style="@style/ExerciseText" -->
+<!--                 android:layout_gravity="center_vertical" -->
+<!--                 android:gravity="center_vertical" /> -->
 
-            <ToggleButton
-                android:id="@+id/button_playquestion"
-                style="@style/PlayerButtonPlayQuestion_v1"
-                android:background="@drawable/selector_button_play_v1"
-                android:contentDescription="button_playquestion"
-                android:gravity="left|center_vertical" />
-        </LinearLayout>
+<!--             <ToggleButton -->
+<!--                 android:id="@+id/button_playquestion" -->
+<!--                 style="@style/PlayerButtonPlayQuestion_v1" -->
+<!--                 android:background="@drawable/selector_button_play_v1" -->
+<!--                 android:contentDescription="button_playquestion" -->
+<!--                 android:gravity="left|center_vertical" /> -->
+<!--         </LinearLayout> -->
 
-        <ImageView
-            android:id="@+id/image_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:contentDescription="questionImage" />
+<!--         <ImageView -->
+<!--             android:id="@+id/image_description" -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_gravity="center" -->
+<!--             android:contentDescription="questionImage" /> -->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:paddingTop="4dp" >
+<!--         <LinearLayout -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:gravity="left" -->
+<!--             android:paddingTop="4dp" > -->
 
-            <TextView
-                android:id="@+id/text_recordnplayback"
-                style="@style/ExerciseText"
-                android:fontFamily="Times New Roman"
-                android:text="@string/record_instruction" />
+<!--             <TextView -->
+<!--                 android:id="@+id/text_recordnplayback" -->
+<!--                 style="@style/ExerciseText" -->
+<!--                 android:fontFamily="Times New Roman" -->
+<!--                 android:text="@string/record_instruction" /> -->
 
-            <ToggleButton
-                android:id="@+id/button_record"
-                style="@style/PlayerButtonRecord_v1"
-                android:background="@drawable/selector_button_record_v1"
-                android:contentDescription="button_record"
-                android:gravity="left|center_vertical" />
+<!--             <ToggleButton -->
+<!--                 android:id="@+id/button_record" -->
+<!--                 style="@style/PlayerButtonRecord_v1" -->
+<!--                 android:background="@drawable/selector_button_record_v1" -->
+<!--                 android:contentDescription="button_record" -->
+<!--                 android:gravity="left|center_vertical" /> -->
 
-            <ToggleButton
-                android:id="@+id/button_playback"
-                style="@style/PlayerButtonPlayBack_v1"
-                android:background="@drawable/selector_button_play_v1"
-                android:contentDescription="button_playback"
-                android:gravity="left|center_vertical" />
-        </LinearLayout>
-    </LinearLayout>
+<!--             <ToggleButton -->
+<!--                 android:id="@+id/button_playback" -->
+<!--                 style="@style/PlayerButtonPlayBack_v1" -->
+<!--                 android:background="@drawable/selector_button_play_v1" -->
+<!--                 android:contentDescription="button_playback" -->
+<!--                 android:gravity="left|center_vertical" /> -->
+<!--         </LinearLayout> -->
+<!--     </LinearLayout> -->
 
-    <LinearLayout style="@style/ExerciseBox" >
+<!--     <LinearLayout style="@style/ExerciseBox" > -->
 
-        <LinearLayout style="@style/fullWidth" >
+<!--         <LinearLayout style="@style/fullWidth" > -->
 
-            <TextView
-                android:id="@+id/text_explanation"
-                style="@style/ExerciseText"
-                android:fontFamily="Times New Roman"
-                android:text="@string/explanation" />
+<!--             <TextView -->
+<!--                 android:id="@+id/text_explanation" -->
+<!--                 style="@style/ExerciseText" -->
+<!--                 android:fontFamily="Times New Roman" -->
+<!--                 android:text="@string/explanation" /> -->
 
-            <ToggleButton
-                android:id="@+id/button_playanswer"
-                style="@style/PlayerButtonPlayAnswer_v1"
-                android:background="@drawable/selector_button_play_v1"
-                android:contentDescription="button_playanswer"
-                android:gravity="left|center_vertical" />
-        </LinearLayout>
+<!--             <ToggleButton -->
+<!--                 android:id="@+id/button_playanswer" -->
+<!--                 style="@style/PlayerButtonPlayAnswer_v1" -->
+<!--                 android:background="@drawable/selector_button_play_v1" -->
+<!--                 android:contentDescription="button_playanswer" -->
+<!--                 android:gravity="left|center_vertical" /> -->
+<!--         </LinearLayout> -->
 
-        <TextView
-            android:id="@+id/text_answer"
-            style="@style/ExerciseText" />
-    </LinearLayout>
+<!--         <TextView -->
+<!--             android:id="@+id/text_answer" -->
+<!--             style="@style/ExerciseText" /> -->
+<!--     </LinearLayout> -->
 
 </android.support.v4.view.ViewPager>

@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,8 @@ import android.widget.ListView;
 public class KanjiMenuActivity extends Activity {
 
 	private String courseName = "Kangji";
+	
+	private static final String TAG="Kanji Menu";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,29 @@ public class KanjiMenuActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long row_id) {
-
+			
+				String itemText = parent.getItemAtPosition(position).toString();
+//				int kanji_lesson_number=0;
+//				
+//				if (itemText.equalsIgnoreCase(getString(R.string.kanji_lesson_7))){
+//					kanji_lesson_number=7;
+//				}else if (itemText.equalsIgnoreCase(getString(R.string.kanji_lesson_8))){
+//					kanji_lesson_number=8;
+//				}else if (itemText.equalsIgnoreCase(getString(R.string.kanji_lesson_9))){
+//					kanji_lesson_number=9;
+//				}else if (itemText.equalsIgnoreCase(getString(R.string.kanji_lesson_10))){
+//					kanji_lesson_number=10;
+//				}else if (itemText.equalsIgnoreCase(getString(R.string.kanji_lesson_11))){
+//					kanji_lesson_number=11;
+//				}else if (itemText.equalsIgnoreCase(getString(R.string.kanji_lesson_12))){
+//					kanji_lesson_number=12;
+//				}
+				
 				Intent intent = new Intent(v.getContext(), KanjiActivity.class);
-
-				intent.putExtra(getString(R.string.kanji_lesson), position);
+				
+				intent.putExtra(getString(R.string.kanji_lesson), itemText);
+				Log.d(TAG, itemText);
+				Log.d(TAG, Integer.toString(position));
 				startActivity(intent);
 
 			}
