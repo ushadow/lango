@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mit6570.lango"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0" 
+     android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="17" />

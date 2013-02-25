@@ -4,6 +4,7 @@
     <string name="app_name">lango</string>
     <string name="menu_about">About</string>
     <string name="menu_help">Help</string>
+    <string name="menu_sync">Sync</string>
     <string name="course_name">MIT_Japanese_502</string>
     <string name="title_activity_ExerciseMenu">Exercises</string>
     <string name="title_activity_exercise">Exercise</string>

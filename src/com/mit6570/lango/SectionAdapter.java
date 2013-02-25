@@ -13,8 +13,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-//this is sectionadapter for the Homepage gridview, where icons for different sections are listed. 
-
+/**
+ * Section adapter for the Homepage gridview, where icons for different sections are listed. 
+ * @author yingyin
+ *
+ */
 public class SectionAdapter extends BaseAdapter {
   public static class Section {
     private String name;
@@ -22,7 +25,7 @@ public class SectionAdapter extends BaseAdapter {
     private int iconId;
 
     /**
-     * 
+     * Creates a new instance of {@code Section}.
      * @param name
      * @param iconId
      * @param activityClass can be null.
@@ -64,7 +67,8 @@ public class SectionAdapter extends BaseAdapter {
     sections.add(new Section(context.getString(R.string.sec_Vocabulary), R.drawable.ic_vocabulary,
                              null));
     sections.add(new Section(context.getString(R.string.sec_Audio), R.drawable.ic_audio, null));
-    sections.add(new Section(context.getString(R.string.sec_Kangji), R.drawable.ic_kangji, KanjiMenuActivity.class));
+    sections.add(new Section(context.getString(R.string.sec_Kangji), R.drawable.ic_kangji, 
+                             KanjiMenuActivity.class));
   }
 
   public int getCount() {
