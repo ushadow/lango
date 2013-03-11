@@ -35,7 +35,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     private MediaPlayer questionPlayer, responsePlayer, answerPlayer;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, 
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
       // The last two arguments ensure LayoutParams are inflated
       // properly.
@@ -142,7 +142,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     }
 
     /**
-     * 
+     *
      * @param afd
      * @param tb
      * @return the new {@code MediaPlayer} created.
@@ -211,7 +211,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     }
 
     /**
-     * 
+     *
      * @param rootView
      * @param showButtonId id of the button to be shown.
      * @param hideButtonId id of the button to be hidden.
@@ -238,7 +238,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
               // TODO Auto-generated catch block
               e.printStackTrace();
             }
-          } 
+          }
 
           if (answer != null) {
             if (tb.isChecked()) {
@@ -265,7 +265,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
     /**
      * Helper Functions
-     * 
+     *
      * @throws IOException
      */
     private Bitmap getBitmapFromAsset(String strName) throws IOException {
