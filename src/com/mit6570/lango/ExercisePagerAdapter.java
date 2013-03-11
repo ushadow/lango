@@ -122,7 +122,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
     /**
      * Plays an audio file.
-     * 
+     *
      * @param file absolute path of an audio file.
      */
     private MediaPlayer startPlaying(String file, final ToggleButton tb) {

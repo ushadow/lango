@@ -42,7 +42,7 @@ public class ContentSyncer extends AsyncTask<String, Void, Document>{
     }
     return doc;
   }
-  
+
   private void closeQuietly(InputStream is) {
     try {
       if (is != null)
