@@ -23,7 +23,7 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
   private static final String DRILL_TAG = "drill";
   private static final String NAME_ATTRIBUTE = "name";
   private static final String SRC_ATTRIBUTE = "src";
-  
+
   private String courseName = "";
 
   @Override
@@ -57,12 +57,12 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
         return true;
       }
     });
-    
+
     ActionBar actionBar = getActionBar();
     actionBar.setDisplayHomeAsUpEnabled(true);
     actionBar.setTitle(courseName);
   }
-  
+
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     switch (item.getItemId()) {
