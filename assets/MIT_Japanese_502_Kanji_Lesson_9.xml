@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Row>
+		<SerialN>87</SerialN>
+		<kanji>午</kanji>
+		<on_yomi>ご</on_yomi>
+		<meaning>noon</meaning>
+		<compound1>午前（ごぜん）</compound1>
+		<compound2>午後（ごご）</compound2>
+		<compound3>午前中（ござんちゅう）in the morning</compound3>
+		<compound4>正午（しょうご）</compound4>
+	</Row>
+	<Row>
+		<SerialN>88</SerialN>
+		<kanji>後</kanji>
+		<on_yomi>ご</on_yomi>
+		<kun_yomi>あと　うし</kun_yomi>
+		<meaning>after</meaning>
+		<compound1>午後（ごご）P.M.; in the afternoon</compound1>
+		<compound2>～の後（のあと）after…</compound2>
+		<compound3>後で（あとで）later</compound3>
+		<compound4>後ろ（うしろ）back; behind</compound4>
+		<compound5>最後に（さいごに）lastly</compound5>
+	</Row>
+	<Row>
+		<SerialN>89</SerialN>
+		<kanji>前</kanji>
+		<on_yomi>ぜん</on_yomi>
+		<kun_yomi>まえ</kun_yomi>
+		<meaning>before</meaning>
+		<compound1>前（まえ）before; front</compound1>
+		<compound2>午前（ごぜん）A.M.</compound2>
+		<compound3>名前（なまえ）name</compound3>
+		<compound4>前売り（まえうり）advance sale</compound4>
+	</Row>
+	<Row>
+		<SerialN>90</SerialN>
+		<kanji>名</kanji>
+		<on_yomi>めい</on_yomi>
+		<kun_yomi>な</kun_yomi>
+		<meaning>name</meaning>
+		<compound1>名前（なまえ）name</compound1>
+		<compound2>有名な（ゆうめいな）famous</compound2>
+		<compound3>名刺（めいし）name card</compound3>
+		<compound4>氏名（しめい）full name</compound4>
+		<compound5>地名（ちめい）place name</compound5>
+	</Row>
+	<Row>
+		<SerialN>91</SerialN>
+		<kanji>白</kanji>
+		<on_yomi>はく</on_yomi>
+		<kun_yomi>しろ</kun_yomi>
+		<meaning>white</meaning>
+		<compound1>白い（しろい）white</compound1>
+		<compound2>白紙（はくし）blank sheet</compound2>
+		<compound3>白（しろ）white color</compound3>
+		<compound4>白鳥（はくちょう）swan</compound4>
+	</Row>
+	<Row>
+		<SerialN>92</SerialN>
+		<kanji>雨</kanji>
+		<on_yomi>う</on_yomi>
+		<kun_yomi>あめ</kun_yomi>
+		<meaning>rain</meaning>
+		<compound1>雨（あめ）rain</compound1>
+		<compound2>雨期（うき）rainy season</compound2>
+		<compound3>梅雨（つゆ）rainy season</compound3>
+	</Row>
+	<Row>
+		<SerialN>93</SerialN>
+		<kanji>書</kanji>
+		<on_yomi>しょ</on_yomi>
+		<kun_yomi>かえ</kun_yomi>
+		<meaning>to write</meaning>
+		<compound1>書く（かく）to write</compound1>
+		<compound2>辞書（じしょ）dictionary</compound2>
+		<compound3>教科書（きょうかしょ）textbook</compound3>
+		<compound4>図書館（としょかん）library</compound4>
+	</Row>
+	<Row>
+		<SerialN>94</SerialN>
+		<kanji>友</kanji>
+		<on_yomi>ゆう</on_yomi>
+		<kun_yomi>とも</kun_yomi>
+		<meaning>friend</meaning>
+		<compound1>友達（ともだち）friend</compound1>
+		<compound2>親友（しんゆう）best friend</compound2>
+		<compound3>友人（ゆうじん）friend</compound3>
+		<compound4>友情（ゆうじょう）friendship</compound4>
+	</Row>
+	<Row>
+		<SerialN>95</SerialN>
+		<kanji>間</kanji>
+		<on_yomi>かん</on_yomi>
+		<kun_yomi>あいだ</kun_yomi>
+		<meaning>between</meaning>
+		<compound1>時間（じかん）time</compound1>
+		<compound2>二時間（にじかん）two hours</compound2>
+		<compound3>間（あいだ）between</compound3>
+		<compound4>人間（にんげん）human being</compound4>
+		<compound5>一週間（いっしゅうかん）one week</compound5>
+	</Row>
+	<Row>
+		<SerialN>96</SerialN>
+		<kanji>家</kanji>
+		<on_yomi>か</on_yomi>
+		<kun_yomi>いえ</kun_yomi>
+		<meaning>house</meaning>
+		<compound1>家族（かぞく）family</compound1>
+		<compound2>家（うち）house; home</compound2>
+		<compound3>家内（かない）my wife</compound3>
+		<compound4>作家（さっか）author</compound4>
+		<compound5>家（いえ）house</compound5>
+	</Row>
+	<Row>
+		<SerialN>97</SerialN>
+		<kanji>話</kanji>
+		<on_yomi>わ</on_yomi>
+		<kun_yomi>はな　はなし</kun_yomi>
+		<meaning>to speak</meaning>
+		<compound1>話（はなし）talk; story</compound1>
+		<compound2>電話（でんわ）telephone</compound2>
+		<compound3>会話（かいわ）conversation</compound3>
+		<compound4>話す（はなす）to speak</compound4>
+	</Row>
+	<Row>
+		<SerialN>98</SerialN>
+		<kanji>少</kanji>
+		<on_yomi>しょう</on_yomi>
+		<kun_yomi>すこ　すく</kun_yomi>
+		<meaning>little</meaning>
+		<compound1>少し（すこし）little</compound1>
+		<compound2>少ない（すくない）few</compound2>
+		<compound3>少々（しょうしょう）a little</compound3>
+		<compound4>少女（しょうじょ）girl</compound4>
+		<compound5>少年（しょうねん）boy</compound5>
+	</Row>
+	<Row>
+		<SerialN>99</SerialN>
+		<kanji>古</kanji>
+		<on_yomi>こ</on_yomi>
+		<kun_yomi>ふる</kun_yomi>
+		<meaning>old</meaning>
+		<compound1>古い（ふるい）old (for things)</compound1>
+		<compound2>中古（ちゅうこ）secondhand</compound2>
+		<compound3>古代（こだい）ancient times</compound3>
+	</Row>
+	<Row>
+		<SerialN>100</SerialN>
+		<kanji>知</kanji>
+		<on_yomi>ち</on_yomi>
+		<kun_yomi>し</kun_yomi>
+		<meaning>知る（しる）to know</meaning>
+		<compound1>知人（ちじん）acquaitance</compound1>
+		<compound2>知り合い（しりあい）acquitance</compound2>
+	</Row>
+	<Row>
+		<SerialN>101</SerialN>
+		<kanji>来</kanji>
+		<on_yomi>らい</on_yomi>
+		<kun_yomi>く　き　こ</kun_yomi>
+		<meaning>来る（くる）to come</meaning>
+		<compound1>来ます（きます）to come</compound1>
+		<compound2>来ない（こない）not to come</compound2>
+		<compound3>来週（らいしゅう）next week</compound3>
+		<compound4>来日（らいにち）visit to Japan</compound4>
+	</Row>
+</Root>

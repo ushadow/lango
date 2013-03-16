@@ -34,7 +34,7 @@ public class KanjiActivity extends FragmentActivity {
 
 		String src = kanjiSrc(kanji_lesson);
 
-		if (kanji_lesson.equalsIgnoreCase(getString(R.string.kanji_lesson_7))) {
+		if (kanji_lesson.equalsIgnoreCase(getString(R.string.kanji_lesson_7)) | kanji_lesson.equalsIgnoreCase(getString(R.string.kanji_lesson_9))) {
 			setContentView(R.layout.activity_kanji);
 
 			Log.d(TAG, src);
