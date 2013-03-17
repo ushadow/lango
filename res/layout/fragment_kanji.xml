@@ -2,218 +2,146 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="3dp"
     android:background="@color/bk_green"
     android:orientation="vertical"
     tools:context=".KanjiActivity" >
 
-    <LinearLayout
-        style="@style/ExerciseBox"
+    <!-- <LinearLayout -->
+    <!-- style="@style/ExerciseBox" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:orientation="vertical" > -->
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        <TextView
+            android:id="@+id/kanji_kanji"
+            style="@style/KanjiTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="6dp"
+            android:fontFamily="Times New Roman"
+            android:text="kanji"
+            android:textSize="80sp" />
 
-            <TextView
-                android:id="@+id/kanji_kanji"
-                style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:fontFamily="Times New Roman"
-                android:text="kanji" />
+        <TextView
+            android:id="@+id/kanji_meaning"
+            style="@style/KanjiTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/kanji_kanji"
+            android:gravity="center"
+            android:fontFamily="Times New Roman"
+            android:text="meaning"
+            android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/kanji_meaning"
-                style="@style/ExerciseText"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:fontFamily="Times New Roman"
-                android:text="meaning" />
+        <TextView
+            android:id="@+id/kanji_on_yomi_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="false"
+            android:layout_below="@id/kanji_meaning"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/kanji_kanji"
+            android:fontFamily="Times New Roman"
+            android:text="音読み"
+            android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/kanji_on_yomi"
-                style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_kanji"
-                android:fontFamily="Times New Roman"
-                android:text="on_yomi" />
+        <TextView
+            android:id="@+id/kanji_on_yomi"
+            style="@style/KanjiTextView"
+            android:layout_below="@id/kanji_on_yomi_display"
+            android:layout_toRightOf="@id/kanji_kanji"
+            android:fontFamily="Times New Roman"
+            android:text="on_yomi" />
 
-            <TextView
-                android:id="@+id/kanji_kun_yomi"
-                style="@style/ExerciseText"
-                android:layout_below="@+id/kanji_meaning"
-                android:layout_toRightOf="@+id/kanji_on_yomi"
-                android:fontFamily="Times New Roman"
-                android:text="kun_yomi" />
+        <TextView
+            android:id="@+id/kanji_kun_yomi_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+
+            android:layout_toRightOf="@id/kanji_on_yomi_display"
+            android:layout_alignTop="@id/kanji_on_yomi_display"
+            
+            android:layout_marginLeft="50dp"
+            android:fontFamily="Times New Roman"
+            android:text="訓読み"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/kanji_kun_yomi"
+            style="@style/KanjiTextView"
+            android:layout_alignParentRight="false"
+            android:layout_alignLeft="@id/kanji_kun_yomi_display"
+            android:layout_below="@id/kanji_kun_yomi_display"
+            android:fontFamily="Times New Roman"
+            android:text="kun_yomi" />
+
+        <LinearLayout
+            style="@style/KanjiTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/kanji_kanji"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/kanji_compound1"
                 style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_on_yomi"
                 android:fontFamily="Times New Roman"
-                android:text="compound1" />
+                android:text="compound1"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/kanji_compound2"
                 style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_compound1"
                 android:fontFamily="Times New Roman"
-                android:text="compound2" />
+                android:text="compound2"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/kanji_compound3"
                 style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_compound2"
                 android:fontFamily="Times New Roman"
-                android:text="compound3" />
+                android:text="compound3"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/kanji_compound4"
                 style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_compound3"
                 android:fontFamily="Times New Roman"
-                android:text="" />
+                android:text=""
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/kanji_compound5"
                 style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_compound4"
                 android:fontFamily="Times New Roman"
-                android:text="" />
+                android:text=""
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/kanji_compound6"
                 style="@style/ExerciseText"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@id/kanji_compound5"
                 android:fontFamily="Times New Roman"
-                android:text="" />
+                android:text=""
+                android:textSize="18sp" />
+        </LinearLayout>
 
-            <GridView
-                android:id="@+id/kanji_grid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:numColumns="auto_fit" >
-            </GridView>
+        <!-- <GridView -->
+        <!-- android:id="@+id/kanji_grid" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_alignParentBottom="true" -->
+        <!-- android:layout_alignParentLeft="true" -->
+        <!-- android:numColumns="auto_fit" > -->
+        <!-- </GridView> -->
 
-        </RelativeLayout>
-    </LinearLayout>
+    </RelativeLayout>
+    <!-- </LinearLayout> -->
 
-</ScrollView> <!-- <LinearLayout -->
-<!-- style="@style/ExerciseBox" -->
-<!-- android:layout_width="match_parent" -->
-<!-- android:layout_height="wrap_content" > -->
-
-<!-- <ToggleButton -->
-<!-- android:id="@+id/button_playquestion" -->
-<!-- style="@style/PlayerButtonPlayQuestion_v1" -->
-<!-- android:background="@drawable/selector_button_play_v2" -->
-<!-- android:contentDescription="@string/button_playquestion" -->
-<!-- android:gravity="center" -->
-<!-- android:textColor="@drawable/selector_button_text_color_darkgreen" -->
-<!-- android:textOff="Question" -->
-<!-- android:textOn="Question" /> -->
-
-<!-- <TextView -->
-<!-- android:id="@+id/text_question" -->
-<!-- style="@style/ExerciseText" -->
-<!-- android:layout_gravity="center_vertical" -->
-<!-- android:gravity="center_vertical" /> -->
-
-<!-- <ImageView -->
-<!-- android:id="@+id/image_description" -->
-<!-- android:layout_width="match_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_gravity="center" -->
-<!-- android:contentDescription="@string/image_exercise" /> -->
-
-<!-- <LinearLayout -->
-<!-- android:id="@+id/group_record" -->
-<!-- android:layout_width="match_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:gravity="left" -->
-<!-- android:paddingBottom="3dp" -->
-<!-- android:paddingLeft="5dp" -->
-<!-- android:paddingRight="5dp" -->
-<!-- android:paddingTop="4dp" > -->
-
-<!-- <LinearLayout -->
-<!-- android:id="@+id/group_recordnplaybackbuttons" -->
-<!-- android:layout_width="fill_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:layout_margin="0dp" -->
-<!-- android:gravity="left" -->
-<!-- android:padding="0dp" > -->
-
-<!-- <ToggleButton -->
-<!-- android:id="@+id/button_record" -->
-<!-- android:layout_width="wrap_content" -->
-<!-- android:layout_height="35dp" -->
-<!-- android:layout_weight="1" -->
-<!-- android:background="@drawable/selector_button_record_v2" -->
-<!-- android:contentDescription="@string/button_record" -->
-<!-- android:gravity="center" -->
-<!-- android:textColor="@drawable/selector_button_text_color_indianred" -->
-<!-- android:textOff="Record" -->
-<!-- android:textOn="Record" -->
-<!-- android:textSize="18sp" /> -->
-
-<!-- <ToggleButton -->
-<!-- android:id="@+id/button_playback" -->
-<!-- android:layout_width="wrap_content" -->
-<!-- android:layout_height="35dp" -->
-<!-- android:layout_weight="1" -->
-<!-- android:background="@drawable/selector_button_play_v2" -->
-<!-- android:contentDescription="@string/button_playback" -->
-<!-- android:gravity="center" -->
-<!-- android:textColor="@drawable/selector_button_text_color_darkgreen" -->
-<!-- android:textOff="Play Back" -->
-<!-- android:textOn="Play Back" -->
-<!-- android:textSize="18sp" /> -->
-<!-- </LinearLayout> -->
-<!-- </LinearLayout> -->
-<!-- </LinearLayout> -->
-
-<!-- <View style="@style/seporator" /> -->
-
-<!-- <LinearLayout style="@style/ExerciseBox" > -->
-
-<!-- <LinearLayout -->
-<!-- android:layout_width="fill_parent" -->
-<!-- android:layout_height="wrap_content" -->
-<!-- android:paddingLeft="5dp" -->
-<!-- android:paddingRight="5dp" > -->
-
-<!-- <ToggleButton -->
-<!-- android:id="@+id/button_answer" -->
-<!-- style="@style/Button_v1" -->
-<!-- android:layout_weight="1" -->
-<!-- android:background="@drawable/selector_button_v1" -->
-<!-- android:contentDescription="@string/button_playanwser" -->
-<!-- android:textColor="@drawable/selector_button_text_color_darkgreen" -->
-<!-- android:textOff="Explanation" -->
-<!-- android:textOn="Explanation" /> -->
-
-<!-- <ToggleButton -->
-<!-- android:id="@+id/button_playanswer" -->
-<!-- style="@style/PlayerButtonPlayAnswer_v1" -->
-<!-- android:layout_weight="1" -->
-<!-- android:background="@drawable/selector_button_play_v2" -->
-<!-- android:contentDescription="@string/button_playanwser" -->
-<!-- android:gravity="center" -->
-<!-- android:textColor="@drawable/selector_button_text_color_darkgreen" /> -->
-<!-- </LinearLayout> -->
-
-<!-- <TextView -->
-<!-- android:id="@+id/text_answer" -->
-<!-- style="@style/ExerciseText" /> -->
-<!-- </LinearLayout> -->
+</ScrollView>

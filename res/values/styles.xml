@@ -91,7 +91,7 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-     <style name="Button_v1" parent="android:attr/borderlessButtonStyle">
+    <style name="Button_v1" parent="android:attr/borderlessButtonStyle">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
@@ -100,7 +100,7 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:gravity">center</item>
     </style>
-    
+
     <!-- Exercise Media player button theme v1 -->
     <style name="PlayerButton_v1" parent="android:attr/borderlessButtonStyle">
         <item name="android:layout_width">fill_parent</item>
@@ -153,6 +153,7 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+
     <!-- Exercise layout paper title stripe theme -->
     <style name="ExercisePagerTitleStripe">
         <item name="android:layout_width">match_parent</item>
@@ -163,7 +164,7 @@
         <item name="android:paddingTop">4dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-    
+
     <!-- Kanji layout paper title stripe theme -->
     <style name="KanjiPagerTitleStripe">
         <item name="android:layout_width">match_parent</item>
@@ -174,11 +175,26 @@
         <item name="android:paddingTop">4dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-    
+
     <style name="seporator">
-        <item name="android:layout_width">fill_parent</item> 
+        <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0.2dp</item>
         <item name="android:visibility">visible</item>
-        <item name="android:background">@color/border_green</item>                
+        <item name="android:background">@color/border_green</item>
     </style>
+    
+    <!-- Kanji textview theme -->
+    <style name="KanjiTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:orientation">vertical</item>
+
+    </style>
+    
 </resources>
