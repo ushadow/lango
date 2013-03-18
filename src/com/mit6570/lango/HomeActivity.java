@@ -53,7 +53,7 @@ public class HomeActivity extends Activity {
         OptionMenuDialog.showAbout(this);
         return true;
       case R.id.menu_sync:
-        (new ContentSyncer()).execute("http://web.mit.edu/21f.502/www/review.html");
+        (new ContentSyncer(this)).execute();
         return true;
       default:
         return super.onOptionsItemSelected(item);

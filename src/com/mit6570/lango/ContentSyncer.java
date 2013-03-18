@@ -12,22 +12,40 @@ import java.util.Arrays;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import com.mit6570.lango.db.CourseContract;
+import com.mit6570.lango.db.CourseDbHelper;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 
 public class ContentSyncer extends AsyncTask<String, Void, Document>{
+  private CourseDbHelper dbHelpter;
+  
+  public ContentSyncer(Context context) {
+    dbHelpter = new CourseDbHelper(context);
+    dbHelpter.createDatabase();
+  }
+  
   @Override
-  protected Document doInBackground(String... urls) {
+  protected Document doInBackground(String... args) {
     URL url;
     Document doc = null;
     DigestInputStream dis = null;
     try {
-      url = new URL(urls[0]);
+      SQLiteDatabase db = dbHelpter.getReadableDatabase();
+      Cursor c = dbHelpter.queryCourse(db);
+      c.moveToFirst();
+      String urlString = c.getString(
+        c.getColumnIndexOrThrow(CourseContract.Course.COLUMN_NAME_URL));
+      url = new URL(urlString);
       final MessageDigest md = MessageDigest.getInstance("MD5");
       dis = new DigestInputStream(url.openStream(), md);
       byte [] digest = md.digest();
       Log.i("lango", Arrays.toString(digest));
-      doc = Jsoup.parse(dis, null, urls[0]);
+      doc = Jsoup.parse(dis, null, urlString);
     } catch (MalformedURLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
