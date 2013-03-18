@@ -25,7 +25,7 @@
             android:layout_margin="6dp"
             android:fontFamily="Times New Roman"
             android:text="kanji"
-            android:textSize="80sp" />
+            android:textSize="64sp" />
 
         <TextView
             android:id="@+id/kanji_meaning"
@@ -33,13 +33,14 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@id/kanji_kanji"
-            android:gravity="center"
             android:fontFamily="Times New Roman"
+            android:gravity="center"
             android:text="meaning"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/kanji_on_yomi_display"
+            style="@style/KanjiTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="false"
@@ -47,37 +48,34 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/kanji_kanji"
             android:fontFamily="Times New Roman"
-            android:text="音読み"
-            android:textSize="16sp" />
+            android:text="音読み" />
 
         <TextView
             android:id="@+id/kanji_on_yomi"
             style="@style/KanjiTextView"
-            android:layout_below="@id/kanji_on_yomi_display"
-            android:layout_toRightOf="@id/kanji_kanji"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/kanji_meaning"
+            android:layout_toRightOf="@id/kanji_on_yomi_display"
             android:fontFamily="Times New Roman"
             android:text="on_yomi" />
 
         <TextView
             android:id="@+id/kanji_kun_yomi_display"
+            style="@style/KanjiTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-
-            android:layout_toRightOf="@id/kanji_on_yomi_display"
-            android:layout_alignTop="@id/kanji_on_yomi_display"
-            
-            android:layout_marginLeft="50dp"
+            android:layout_below="@id/kanji_on_yomi_display"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/kanji_kanji"
             android:fontFamily="Times New Roman"
-            android:text="訓読み"
-            android:textSize="16sp" />
+            android:text="訓読み" />
 
         <TextView
             android:id="@+id/kanji_kun_yomi"
             style="@style/KanjiTextView"
-            android:layout_alignParentRight="false"
-            android:layout_alignLeft="@id/kanji_kun_yomi_display"
-            android:layout_below="@id/kanji_kun_yomi_display"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/kanji_on_yomi"
+            android:layout_toRightOf="@id/kanji_kun_yomi_display"
             android:fontFamily="Times New Roman"
             android:text="kun_yomi" />
 
