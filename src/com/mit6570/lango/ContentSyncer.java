@@ -21,6 +21,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 
+/**
+ * Synchs with the course web site asynchronously.
+ * @author yingyin
+ *
+ */
 public class ContentSyncer extends AsyncTask<String, Void, Document>{
   private CourseDbHelper dbHelpter;
   
