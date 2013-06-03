@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
@@ -18,6 +20,20 @@ public class HomeActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
 
+  	LinearLayout jap3 = (LinearLayout) findViewById(R.id.jap3_box);
+  	 
+  	jap3.setOnClickListener(new OnClickListener() {
+         	@Override
+         	public void onClick(View view) {
+               	// TODO Auto-generated method stub
+               	Intent intent = new Intent(view.getContext(),
+                             	ExerciseMenuActivity.class);
+               	intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+               	startActivity(intent);
+         	}
+  	});
+    
+    
     GridView gridview = (GridView) findViewById(R.id.home_gridview);
     final SectionAdapter sectionAdapter = new SectionAdapter(this);
     gridview.setAdapter(sectionAdapter);
