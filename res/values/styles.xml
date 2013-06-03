@@ -1,40 +1,40 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-
+ 
     <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    	Base application theme, dependent on API level. This theme is replaced
+    	by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+        	Theme customizations available in newer API levels can go in
+        	res/values-vXX/styles.xml, while customizations related to
+        	backward-compatibility can go here.
+    	-->
     </style>
-
+ 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-
+ 
     <style name="fullWidth">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-
+ 
     <style name="wrapContent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">10dp</item>
     </style>
-
+ 
     <!-- Home page Icon theme. -->
     <style name="HomeIconText" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">Arial</item>
         <item name="android:textSize">19sp</item>
         <item name="android:textColor">@color/txt_black</item>
     </style>
-
+ 
     <!-- Exercise Menu page list theme: LEVEL 1. -->
     <style name="ExerciseMenuTextLevel1" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">Arial</item>
@@ -45,7 +45,7 @@
         <item name="android:textColor">@color/txt_black</item>
         <item name="android:background">@color/bk_green</item>
     </style>
-
+ 
     <!-- Exercise Menu page list theme: LEVEL 2. -->
     <style name="ExerciseMenuTextLevel2" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">Calibri</item>
@@ -55,7 +55,7 @@
         <item name="android:paddingTop">7dp</item>
         <item name="android:textColor">@color/txt_gray</item>
     </style>
-
+ 
     <!-- Exercise Media player button theme v0 -->
     <style name="PlayerButtonRecord_v0">
         <item name="android:layout_width">120dp</item>
@@ -65,7 +65,7 @@
         <item name="android:textSize">18sp</item>
         <item name="android:padding">8dp</item>
     </style>
-
+ 
     <style name="PlayerButtonPlayBack_v0">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">40dp</item>
@@ -74,7 +74,7 @@
         <item name="android:textSize">18sp</item>
         <item name="android:padding">8dp</item>
     </style>
-
+ 
     <style name="PlayerButtonPlayAnswer_v0">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">40dp</item>
@@ -82,7 +82,7 @@
         <item name="android:textOff">answer</item>
         <item name="android:textSize">18sp</item>
     </style>
-
+ 
     <style name="PlayerButtonPlayQuestion_v0">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">40dp</item>
@@ -90,7 +90,7 @@
         <item name="android:textOff">question</item>
         <item name="android:textSize">18sp</item>
     </style>
-
+ 
     <style name="Button_v1" parent="android:attr/borderlessButtonStyle">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">35dp</item>
@@ -100,7 +100,7 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:gravity">center</item>
     </style>
-
+ 
     <!-- Exercise Media player button theme v1 -->
     <style name="PlayerButton_v1" parent="android:attr/borderlessButtonStyle">
         <item name="android:layout_width">fill_parent</item>
@@ -111,27 +111,27 @@
         <item name="android:paddingRight">33dp</item>
         <item name="android:gravity">center</item>
     </style>
-
+ 
     <style name="PlayerButtonRecord_v1" parent="@style/PlayerButton_v1">
         <item name="android:textOn">R</item>
         <item name="android:textOff">R</item>
     </style>
-
+ 
     <style name="PlayerButtonPlayQuestion_v1" parent="@style/PlayerButton_v1">
         <item name="android:textOn">Q</item>
         <item name="android:textOff">Q</item>
     </style>
-
+ 
     <style name="PlayerButtonPlayAnswer_v1" parent="@style/PlayerButton_v1">
         <item name="android:textOn">Explanation</item>
         <item name="android:textOff">Explanation</item>
     </style>
-
+ 
     <style name="PlayerButtonPlayBack_v1" parent="@style/PlayerButton_v1">
         <item name="android:textOn">PB</item>
         <item name="android:textOff">PB</item>
     </style>
-
+ 
     <!-- Exercise text theme -->
     <style name="ExerciseText">
         <item name="android:layout_width">wrap_content</item>
@@ -139,7 +139,7 @@
         <item name="android:paddingLeft">5dp</item>
         <item name="android:textSize">18sp</item>
     </style>
-
+ 
     <!-- Exercise layout box theme -->
     <style name="ExerciseBox">
         <item name="android:layout_width">match_parent</item>
@@ -152,8 +152,7 @@
         <item name="android:background">@color/white</item>
         <item name="android:orientation">vertical</item>
     </style>
-
-
+ 
     <!-- Exercise layout paper title stripe theme -->
     <style name="ExercisePagerTitleStripe">
         <item name="android:layout_width">match_parent</item>
@@ -164,7 +163,7 @@
         <item name="android:paddingTop">4dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
+ 
     <!-- Kanji layout paper title stripe theme -->
     <style name="KanjiPagerTitleStripe">
         <item name="android:layout_width">match_parent</item>
@@ -175,14 +174,14 @@
         <item name="android:paddingTop">4dp</item>
         <item name="android:textColor">@color/white</item>
     </style>
-
+ 
     <style name="seporator">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">0.2dp</item>
         <item name="android:visibility">visible</item>
         <item name="android:background">@color/border_green</item>
     </style>
-    
+ 
     <!-- Kanji textview theme -->
     <style name="KanjiTextView">
         <item name="android:layout_width">wrap_content</item>
@@ -194,7 +193,64 @@
         <item name="android:layout_margin">3dp</item>
         <item name="android:background">@color/white</item>
         <item name="android:orientation">vertical</item>
-
     </style>
-    
+ 
+    <!-- Homepage layout theme -->
+    <style name="titleTxt" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Calibri</item>
+        <item name="android:textSize">31sp</item>
+        <item name="android:textColor">@color/txt_black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:padding">0dp</item>
+    </style>
+ 
+    <style name="subTitleTxt" parent="@android:style/TextAppearance">
+        <item name="android:fontFamily">Calibri</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/txt_gray</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+ 
+    <style name="titleImg">
+        <item name="android:layout_width">15dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:gravity">center_vertical|left</item>
+    </style>
+ 
+    <style name="jap_box">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginLeft">60dp</item>
+        <item name="android:layout_marginRight">60dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:background">@drawable/selector_button_v1</item>
+    </style>
+ 
+    <style name="jap_box_left">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">left|bottom</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingTop">11dp</item>
+    </style>
+ 
+    <style name="jap_box_right">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">5</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+ 
 </resources>

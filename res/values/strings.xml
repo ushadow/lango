@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+ 
     <string name="app_name">lango</string>
     <string name="menu_about">About</string>
     <string name="menu_help">Help</string>
@@ -37,7 +37,8 @@
     <string name="ex_src">ex_src</string>
     <string name="ex_lesson">ex_lesson</string>
     <string name="ex_drill">ex_drill</string>
-    
+   
+   
     <string name="kanji_lesson">kanji_lesson</string>
     <string name="kanji_lesson_7">Lesson 7</string>
     <string name="kanji_lesson_8">Lesson 8</string>
@@ -45,7 +46,6 @@
     <string name="kanji_lesson_10">Lesson 10</string>
     <string name="kanji_lesson_11">Lesson 11</string>
     <string name="kanji_lesson_12">Lesson 12</string>
-    
     <string name="kanji_serial_number">kanji_SerialN</string>
     <string name="kanji_kanji">kanji_kanji</string>
     <string name="kanji_on_yomi">kanji_on_yomi</string>
@@ -57,11 +57,24 @@
     <string name="kanji_compound4">kanji_compound4</string>
     <string name="kanji_compound5">kanji_compound5</string>
     <string name="kanji_compound6">kanji_compound6</string>
-    
+   
+   
     <string name="unimplemented_msg">Coming soon.</string>
     <string name="about">Lango is a language app that enables students to do exercises (both speaking and listening) on the go. It synchronizes with the MIT Japanese course curriculum. More features are coming soon.</string>
-    <string name="ex_help">Click the R button again to stop recording. 
+    <string name="ex_help">Click the R button again to stop recording.
         Click the PB button to replay your recording.
         Swipe left and right to view more exercises.</string>
-
+       
+   
+   
+    <string name="copyright">© 2013 by MIT Japanese Language Program. \nAll rights reserved.</string>
+    <string name="jap1">Japanese I</string>
+    <string name="jap1_sub">Fall: 21F.501/551</string>
+    <string name="jap2">Japanese II</string>
+    <string name="jap2_sub">Spring: 21F.502/552</string>
+    <string name="jap3">Japanese III</string>
+    <string name="jap3_sub">Fall: 21F.503</string>
+    <string name="jap4">Japanese IV</string>
+    <string name="jap4_sub">Spring: 21F.504</string>
+ 
 </resources>
