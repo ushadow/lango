@@ -30,7 +30,7 @@
  
                 	<TextView
                     	style="@style/titleImg"
-                    	android:background="@color/border_green" />
+                    	android:background="@color/jap1_home" />
             	</LinearLayout>
  
             	<LinearLayout style="@style/jap_box_right" >
@@ -58,7 +58,7 @@
                 	<TextView
                     	android:layout_width="15dp"
                     	android:layout_height="fill_parent"
-                    	android:background="@color/border_green"
+                    	android:background="@color/jap2_home"
                     	android:gravity="center_vertical|left" />
             	</LinearLayout>
  
@@ -86,7 +86,7 @@
  
                 	<TextView
                     	style="@style/titleImg"
-                    	android:background="@color/border_green" />
+                    	android:background="@color/jap3_home" />
             	</LinearLayout>
  
             	<LinearLayout style="@style/jap_box_right" >
@@ -113,7 +113,7 @@
  
                 	<TextView
                     	style="@style/titleImg"
-                    	android:background="@color/border_green" />
+                    	android:background="@color/jap4_home" />
             	</LinearLayout>
  
             	<LinearLayout style="@style/jap_box_right" >
