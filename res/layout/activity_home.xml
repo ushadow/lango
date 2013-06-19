@@ -24,7 +24,8 @@
                 android:id="@+id/jap1_box"
                 style="@style/jap_box"
                 android:layout_alignParentTop="true"
-                android:clickable="true" >
+                android:clickable="true" 
+                android:background="@drawable/selector_jap1_bg">
  
             	<LinearLayout style="@style/jap_box_left" >
  
@@ -51,7 +52,8 @@
                 android:id="@+id/jap2_box"
                 style="@style/jap_box"
                 android:layout_below="@id/jap1_box"
-                android:clickable="true" >
+                android:clickable="true" 
+                android:background="@drawable/selector_jap2_bg">
  
             	<LinearLayout style="@style/jap_box_left" >
  
@@ -80,7 +82,8 @@
                 android:id="@+id/jap3_box"
                 style="@style/jap_box"
                 android:layout_below="@id/jap2_box"
-                android:clickable="true" >
+                android:clickable="true" 
+                android:background="@drawable/selector_jap3_bg">
  
             	<LinearLayout style="@style/jap_box_left" >
  
@@ -107,7 +110,8 @@
                 android:id="@+id/jap4_box"
                 style="@style/jap_box"
                 android:layout_below="@id/jap3_box"
-                android:clickable="true" >
+                android:clickable="true" 
+                android:background="@drawable/selector_jap4_bg">
  
             	<LinearLayout style="@style/jap_box_left" >
  

@@ -232,7 +232,6 @@
         <item name="android:layout_marginRight">60dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:paddingBottom">6dp</item>
-        <item name="android:background">@drawable/selector_button_v1</item>
     </style>
  
     <style name="jap_box_left">
