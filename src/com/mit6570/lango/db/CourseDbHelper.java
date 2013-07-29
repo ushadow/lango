@@ -50,7 +50,8 @@ public class CourseDbHelper extends SQLiteOpenHelper{
   public Cursor queryCourse(SQLiteDatabase db) {
     String[] columns = {
        CourseContract.Course.COLUMN_NAME_TITLE,
-       CourseContract.Course.COLUMN_NAME_URL
+       CourseContract.Course.COLUMN_NAME_URL,
+       CourseContract.Course.COLUMN_NAME_HASH
     };
     
     return db.query(CourseContract.Course.TABLE_NAME, columns, null, null, null, null, null);

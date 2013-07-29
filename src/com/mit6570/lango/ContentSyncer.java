@@ -43,33 +43,29 @@ public class ContentSyncer extends AsyncTask<String, Void, Document>{
       SQLiteDatabase db = dbHelpter.getReadableDatabase();
       Cursor c = dbHelpter.queryCourse(db);
       c.moveToFirst();
+      Log.i("lango", Arrays.toString(c.getColumnNames()));
       String urlString = c.getString(
         c.getColumnIndexOrThrow(CourseContract.Course.COLUMN_NAME_URL));
       url = new URL(urlString);
       final MessageDigest md = MessageDigest.getInstance("MD5");
       dis = new DigestInputStream(url.openStream(), md);
-      boolean needUpdate = true;
       
       // Gets old hash.
-      int hashColumnIndex = c.getColumnIndex(CourseContract.Course.COLUMN_NAME_HASH);
-      if (hashColumnIndex >= 0) {
-        byte[] oldDigest = c.getBlob(hashColumnIndex);          
-        byte [] digest = md.digest();
-        needUpdate = needUpdate(digest, oldDigest);
-      }
+      int hashColumnIndex = c.getColumnIndexOrThrow(CourseContract.Course.COLUMN_NAME_HASH);
+      byte[] oldDigest = c.getBlob(hashColumnIndex);          
+      byte [] digest = md.digest();
+      Log.i("lango", Utils.bytesToHex(digest));
         
-      if (needUpdate) {
+      if (needUpdate(digest, oldDigest)) {
         doc = Jsoup.parse(dis, null, urlString);
         updateCourse(doc);
       }
     } catch (MalformedURLException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     } catch (NoSuchAlgorithmException nsae) {
       Log.e("lango", nsae.getMessage());
       System.exit(-1);
     } catch (IOException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     } finally {
       closeQuietly(dis);
@@ -88,6 +84,8 @@ public class ContentSyncer extends AsyncTask<String, Void, Document>{
   }
   
   private boolean needUpdate(byte[] digest, byte[] oldDigest) {
+    Log.i("langlo", Arrays.toString(digest));
+    Log.i("lango", Arrays.toString(oldDigest));
     return oldDigest == null || Arrays.equals(digest, oldDigest);
   }
   
