@@ -22,7 +22,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 /**
- * Synchs with the course web site asynchronously.
+ * Syncs with the course web site asynchronously.
  * @author yingyin
  *
  */
@@ -48,9 +48,20 @@ public class ContentSyncer extends AsyncTask<String, Void, Document>{
       url = new URL(urlString);
       final MessageDigest md = MessageDigest.getInstance("MD5");
       dis = new DigestInputStream(url.openStream(), md);
-      byte [] digest = md.digest();
-      Log.i("lango", Arrays.toString(digest));
-      doc = Jsoup.parse(dis, null, urlString);
+      boolean needUpdate = true;
+      
+      // Gets old hash.
+      int hashColumnIndex = c.getColumnIndex(CourseContract.Course.COLUMN_NAME_HASH);
+      if (hashColumnIndex >= 0) {
+        byte[] oldDigest = c.getBlob(hashColumnIndex);          
+        byte [] digest = md.digest();
+        needUpdate = needUpdate(digest, oldDigest);
+      }
+        
+      if (needUpdate) {
+        doc = Jsoup.parse(dis, null, urlString);
+        updateCourse(doc);
+      }
     } catch (MalformedURLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
@@ -74,5 +85,13 @@ public class ContentSyncer extends AsyncTask<String, Void, Document>{
       Log.e("lango", ioe.getMessage());
       System.exit(-1);
     }
+  }
+  
+  private boolean needUpdate(byte[] digest, byte[] oldDigest) {
+    return oldDigest == null || Arrays.equals(digest, oldDigest);
+  }
+  
+  private void updateCourse(Document doc) {
+    Log.i("lango", "update course");
   }
 }
