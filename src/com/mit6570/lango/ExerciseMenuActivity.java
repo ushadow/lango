@@ -1,6 +1,8 @@
 package com.mit6570.lango;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +13,7 @@ import android.app.ActionBar;
 import android.app.ExpandableListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Xml;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
@@ -36,7 +39,9 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_exercisemenu);
 
-    final List<ExerciseMenu> exercises = parseXml();
+    Bundle extras = getIntent().getExtras();
+    final String src = extras.getString(getString(R.string.key_course_src));
+    final List<ExerciseMenu> exercises = parseXml(src);
     ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises);
     setListAdapter(ema);
     getExpandableListView().setOnChildClickListener(new OnChildClickListener() {
@@ -80,10 +85,15 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     }
   }
 
-  private List<ExerciseMenu> parseXml() {
+  private List<ExerciseMenu> parseXml(String fileName) {
     List<ExerciseMenu> exercises = null;
+    InputStream is = null;
+    InputStreamReader isr = null;
     try {
-      XmlPullParser parser = this.getResources().getXml(R.xml.mit_japanese_502);
+      is = getAssets().open(fileName);
+      isr = new InputStreamReader(is);
+      XmlPullParser parser = Xml.newPullParser();
+      parser.setInput(isr);
       int eventType = parser.getEventType();
       boolean done = false;
       ExerciseMenu currentExe = null;
@@ -124,6 +134,12 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
+    } finally {
+      if (isr != null) try {
+        isr.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
     return exercises;
   }

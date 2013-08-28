@@ -55,11 +55,11 @@
     <string name="kanji_compound4">kanji_compound4</string>
     <string name="kanji_compound5">kanji_compound5</string>
     <string name="kanji_compound6">kanji_compound6</string>
+
     <string name="unimplemented_msg">Coming soon.</string>
     <string name="about">Lango is a language app that enables students to do exercises (both speaking and listening) on the go. It synchronizes with the MIT Japanese course curriculum. More features are coming soon.</string>
     <string name="ex_help">Click the R button again to stop recording.
         Click the PB button to replay your recording.
         Swipe left and right to view more exercises.</string>
     <string name="copyright">"© 2013 by MIT Japanese Language Program. \nAll rights reserved."</string>
-
 </resources>

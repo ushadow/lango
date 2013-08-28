@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<course name="MIT Japanese III">
+<lesson name="Lesson 13">
+<drill src="MIT_Japanese_III_Lesson_13_Potential_form.xml">Potential form</drill>
+<drill src="MIT_Japanese_III_Lesson_13_Inference.xml">Inference 〜そう</drill>
+<drill src="MIT_Japanese_III_Lesson_13_Frequency.xml">Frequency </drill>
+<drill src="MIT_Japanese_III_Lesson_13_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_III_Lesson_13_Listening_Comprehension.xml">Listening Comprehension</drill>
+<drill src="MIT_Japanese_III_Lesson_13_.xml">漢字</drill>
+</lesson>
+<lesson name="Lesson 14">
+<drill src="MIT_Japanese_III_Lesson_14_.xml">〜かもしれません</drill>
+<drill src="MIT_Japanese_III_Lesson_14_.xml">あげる／くれる／もらう</drill>
+<drill src="MIT_Japanese_III_Lesson_14_.xml">〜たらどうですか</drill>
+<drill src="MIT_Japanese_III_Lesson_14_number_number_negative.xml">number+も／number+しか+negative</drill>
+<drill src="MIT_Japanese_III_Lesson_14_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_III_Lesson_14_Listening_Comprehension.xml">Listening Comprehension</drill>
+<drill src="MIT_Japanese_III_Lesson_14_.xml">漢字</drill>
+</lesson>
+<lesson name="Lesson 15">
+<drill src="MIT_Japanese_III_Lesson_15_Volitional_form.xml">Volitional form</drill>
+<drill src="MIT_Japanese_III_Lesson_15_Volitional_form.xml">Volitional form+と思っています</drill>
+<drill src="MIT_Japanese_III_Lesson_15_Volitional_Form_Practice.xml">Volitional
+		  	Form Practice</drill>
+<drill src="MIT_Japanese_III_Lesson_15_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_III_Lesson_15_Listening_Comprehension.xml">Listening Comprehension</drill>
+<drill src="MIT_Japanese_III_Lesson_15_.xml">漢字</drill>
+</lesson>
+<lesson name="Lesson 16">
+<drill src="MIT_Japanese_III_Lesson_16_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_III_Lesson_16_Listening_Comprehension.xml">Listening Comprehension</drill>
+<drill src="MIT_Japanese_III_Lesson_16_.xml">漢字</drill>
+</lesson>
+<lesson name="Lesson 17">
+<drill src="MIT_Japanese_III_Lesson_17_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_III_Lesson_17_Listening_Comprehension.xml">Listening Comprehension</drill>
+<drill src="MIT_Japanese_III_Lesson_17_.xml">漢字</drill>
+</lesson>
+<lesson name="Lesson 18">
+<drill src="MIT_Japanese_III_Lesson_18_Transitive_Intransitive_Drill_1.xml">Transitive/Intransitive Drill 1</drill>
+<drill src="MIT_Japanese_III_Lesson_18_Transitive_Intransitive_Drill_2.xml">Transitive/Intransitive Drill 2</drill>
+<drill src="MIT_Japanese_III_Lesson_18__short_form_Practice.xml">てしまう short form Practice</drill>
+<drill src="MIT_Japanese_III_Lesson_18_Situational_Usage.xml">Situational Usage</drill>
+<drill src="MIT_Japanese_III_Lesson_18_Listening_Comprehension.xml">Listening Comprehension</drill>
+<drill src="MIT_Japanese_III_Lesson_18_.xml">漢字</drill>
+</lesson>
+</course>
