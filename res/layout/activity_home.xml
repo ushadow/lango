@@ -1,155 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="@color/white"
-	android:gravity="center_horizontal|center_vertical"
-	android:orientation="vertical"
-	tools:context=".HomeActivity" >
- 
-    <ScrollView
-    	android:id="@+id/content"
-    	android:layout_width="match_parent"
-    	android:layout_height="match_parent" >
- 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".HomeActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
         <LinearLayout
-        	android:layout_width="match_parent"
-        	android:layout_height="match_parent"
-        	android:orientation="vertical" >
- 
-        	<!-- Japanese I -->
- 
-        	<LinearLayout
-                android:id="@+id/jap1_box"
-                style="@style/jap_box"
-                android:layout_alignParentTop="true"
-                android:clickable="true" 
-                android:background="@drawable/selector_jap1_bg">
- 
-            	<LinearLayout style="@style/jap_box_left" >
- 
-                	<TextView
-                    	style="@style/titleImg"
-                    	android:background="@color/jap1_home" />
-            	</LinearLayout>
- 
-            	<LinearLayout style="@style/jap_box_right" >
- 
-                	<TextView
-                    	style="@style/titleTxt"
-                    	android:text="@string/jap1" />
- 
-                	<TextView
-                    	style="@style/subTitleTxt"
-                    	android:text="@string/jap1_sub" />
-            	</LinearLayout>
-        	</LinearLayout>
- 
-        	<!-- Japanese II -->
- 
-        	<LinearLayout
-                android:id="@+id/jap2_box"
-                style="@style/jap_box"
-                android:layout_below="@id/jap1_box"
-                android:clickable="true" 
-                android:background="@drawable/selector_jap2_bg">
- 
-            	<LinearLayout style="@style/jap_box_left" >
- 
-                	<TextView
-                    	android:layout_width="15dp"
-                    	android:layout_height="fill_parent"
-                    	android:background="@color/jap2_home"
-                    	android:gravity="center_vertical|left" />
-            	</LinearLayout>
- 
-            	<LinearLayout style="@style/jap_box_right" >
- 
-                	<TextView
-                    	style="@style/titleTxt"
-                    	android:text="@string/jap2" />
- 
-                	<TextView
-                    	style="@style/subTitleTxt"
-     	               android:text="@string/jap2_sub" />
-            	</LinearLayout>
-        	</LinearLayout>
- 
-        	<!-- Japanese III -->
- 
-        	<LinearLayout
-                android:id="@+id/jap3_box"
-                style="@style/jap_box"
-                android:layout_below="@id/jap2_box"
-                android:clickable="true" 
-                android:background="@drawable/selector_jap3_bg">
- 
-            	<LinearLayout style="@style/jap_box_left" >
- 
-                	<TextView
-                    	style="@style/titleImg"
-                    	android:background="@color/jap3_home" />
-            	</LinearLayout>
- 
-            	<LinearLayout style="@style/jap_box_right" >
- 
-                	<TextView
-                    	style="@style/titleTxt"
-                        android:text="@string/jap3" />
- 
-                	<TextView
-                    	style="@style/subTitleTxt"
-                    	android:text="@string/jap3_sub" />
-            	</LinearLayout>
-        	</LinearLayout>
- 
-        	<!-- Japanese IV -->
- 
-        	<LinearLayout
-                android:id="@+id/jap4_box"
-                style="@style/jap_box"
-                android:layout_below="@id/jap3_box"
-                android:clickable="true" 
-                android:background="@drawable/selector_jap4_bg">
- 
-            	<LinearLayout style="@style/jap_box_left" >
- 
-                	<TextView
-                    	style="@style/titleImg"
-                    	android:background="@color/jap4_home" />
-            	</LinearLayout>
- 
-            	<LinearLayout style="@style/jap_box_right" >
- 
-                	<TextView
-                    	style="@style/titleTxt"
-                    	android:text="@string/jap4" />
- 
-                	<TextView
-                    	style="@style/subTitleTxt"
-                        android:text="@string/jap4_sub" />
-            	</LinearLayout>
-        	</LinearLayout>
- 
-        	<GridView
-                android:id="@+id/home_gridview"
-                style="@style/HomeIconText"
-                android:layout_width="wrap_content"
-                android:layout_height="16dp"
-                android:layout_below="@id/jap4_box"
-                android:numColumns="auto_fit"
-                android:verticalSpacing="50dp" />
- 
-        	<TextView
-                android:id="@+id/copyright"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/home_gridview"
-                android:gravity="center_horizontal"
-                android:padding="6dip"
-                android:text="© 2013 by MIT Japanese Language Program. \nAll rights reserved." />
-        </LinearLayout>
-    </ScrollView>
- 
-</RelativeLayout>
+            android:id="@+id/course_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/copyright"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:gravity="center_horizontal"
+            android:text="@string/copyright" />
+    </LinearLayout>
+
+</ScrollView>

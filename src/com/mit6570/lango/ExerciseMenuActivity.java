@@ -17,6 +17,11 @@ import android.widget.ExpandableListView;
 import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
 
+/**
+ * Activity for users to choose exercises and drills. Exercises contain drills.
+ * @author yingyin
+ *
+ */
 public class ExerciseMenuActivity extends ExpandableListActivity {
   private static final String ROOT_TAG = "course";
   private static final String LESSON_TAG = "lesson";

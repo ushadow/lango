@@ -12,8 +12,10 @@
     <color name="button_text_red">#B0171F</color>
     
     <!-- Home page colors -->
-    <color name="jap1_home">#aade87</color>
-    <color name="jap2_home">#ffccaa</color>
-    <color name="jap3_home">#ff8080</color>
-    <color name="jap4_home">#afc6e9</color>
+    <string-array name="course_colors">
+      <item>#aade87</item>
+      <item>#ffccaa</item>
+      <item>#ff8080</item>
+      <item>#afc6e9</item>
+    </string-array>
 </resources>

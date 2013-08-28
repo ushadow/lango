@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -54,7 +55,6 @@ public class ContentSyncer extends AsyncTask<String, Void, Document>{
       int hashColumnIndex = c.getColumnIndexOrThrow(CourseContract.Course.COLUMN_NAME_HASH);
       byte[] oldDigest = c.getBlob(hashColumnIndex);          
       byte [] digest = md.digest();
-      Log.i("lango", Utils.bytesToHex(digest));
         
       if (needUpdate(digest, oldDigest)) {
         doc = Jsoup.parse(dis, null, urlString);

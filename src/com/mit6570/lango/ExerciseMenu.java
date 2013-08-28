@@ -4,6 +4,11 @@ import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Data structure of an exercise menu item.
+ * @author yingyin
+ *
+ */
 public class ExerciseMenu {
   private List<ExerciseMenu> drills = new ArrayList<ExerciseMenu>();
   private String name, src;

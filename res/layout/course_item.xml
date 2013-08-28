@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/jap_box"
+    android:clickable="true" 
+    android:background="@drawable/selector_jap1_bg">
+
+    <LinearLayout style="@style/jap_box_left" >
+        <TextView
+            android:id="@+id/course_color_tv"
+            style="@style/titleImg" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/jap_box_right" >
+        <TextView
+            android:id="@+id/course_name"
+            style="@style/titleTxt" />
+
+        <TextView
+            android:id="@+id/course_sub"
+            style="@style/subTitleTxt"/>
+    </LinearLayout>
+
+</LinearLayout>
