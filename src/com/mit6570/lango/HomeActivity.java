@@ -1,6 +1,7 @@
 package com.mit6570.lango;
 
 import com.mit6570.lango.CourseListAdapter.Course;
+import com.mit6570.lango.db.ContentSyncer;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -59,7 +60,7 @@ public class HomeActivity extends Activity {
         OptionMenuDialog.showAbout(this);
         return true;
       case R.id.menu_sync:
-        (new ContentSyncer(this)).execute();
+        (new ContentSyncer(this)).execute("Japanese II", "http://web.mit.edu/21f.502/www/review.html");
         return true;
       default:
         return super.onOptionsItemSelected(item);
