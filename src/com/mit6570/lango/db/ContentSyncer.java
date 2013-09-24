@@ -45,8 +45,6 @@ public class ContentSyncer extends AsyncTask<String, Void, Void>{
     dm.close();
     return null;
   }
-
- 
   
   private boolean needUpdate(byte[] digest, byte[] oldDigest) {
     Log.i("langlo", Arrays.toString(digest));
