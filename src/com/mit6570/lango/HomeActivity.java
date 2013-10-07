@@ -35,7 +35,6 @@ public class HomeActivity extends Activity {
         public void onClick(View v) {
           if (course.src != null) {
             Intent intent = new Intent(v.getContext(), ExerciseMenuActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             intent.putExtra(getString(R.string.key_course_src), course.src);
             startActivity(intent);
           }

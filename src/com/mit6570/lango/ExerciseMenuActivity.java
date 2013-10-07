@@ -13,6 +13,7 @@ import android.app.ActionBar;
 import android.app.ExpandableListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Xml;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,8 +23,9 @@ import android.widget.ExpandableListView.OnChildClickListener;
 
 /**
  * Activity for users to choose exercises and drills. Exercises contain drills.
+ * 
  * @author yingyin
- *
+ * 
  */
 public class ExerciseMenuActivity extends ExpandableListActivity {
   private static final String ROOT_TAG = "course";
@@ -33,15 +35,39 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
   private static final String SRC_ATTRIBUTE = "src";
 
   private String courseName = "";
+  private String courseSrc = null;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_exercisemenu);
+  }
 
+  @Override
+  protected void onResume() {
+    super.onResume();
     Bundle extras = getIntent().getExtras();
-    final String src = extras.getString(getString(R.string.key_course_src));
-    final List<ExerciseMenu> exercises = parseXml(src);
+    String src = extras.getString(getString(R.string.key_course_src));
+    if (courseSrc == null || !courseSrc.equals(src)) {
+      courseSrc = src;
+      initializeCourseList();
+    }
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    switch (item.getItemId()) {
+      case android.R.id.home:
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        return true;
+      default:
+        return super.onOptionsItemSelected(item);
+    }
+  }
+
+  private void initializeCourseList() {
+    final List<ExerciseMenu> exercises = parseXml(courseSrc);
     ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises);
     setListAdapter(ema);
     getExpandableListView().setOnChildClickListener(new OnChildClickListener() {
@@ -71,18 +97,6 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     ActionBar actionBar = getActionBar();
     actionBar.setDisplayHomeAsUpEnabled(true);
     actionBar.setTitle(courseName);
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    switch (item.getItemId()) {
-      case android.R.id.home:
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-        return true;
-      default:
-        return super.onOptionsItemSelected(item);
-    }
   }
 
   private List<ExerciseMenu> parseXml(String fileName) {
