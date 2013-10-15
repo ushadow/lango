@@ -49,14 +49,15 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
       Bundle metaInfo = b.getBundle(KEY_META);
       String instruction = metaInfo.getString(getString(R.string.ex_instruction));
+      instruction = removeRubyMarker(instruction);
       setupText(rootView, R.id.text_instruction, instruction);
 
       // Set exercise description.
-      String questionAudio = b.getString(getString(R.string.ex_description_audio));
+      String questionAudio = removeRubyMarker(b.getString(getString(R.string.ex_description_audio)));
       setupPlayQuestionButton(rootView, R.id.button_playquestion, questionAudio);
 
       String answerAudio = b.getString(getString(R.string.ex_answer_audio));
-      String answer = b.getString(getString(R.string.ex_answer));
+      String answer = removeRubyMarker(b.getString(getString(R.string.ex_answer)));
       int showButtonId = answerAudio == null ? R.id.button_answer : R.id.button_playanswer;
       int hideButtonId = answerAudio == null ? R.id.button_playanswer : R.id.button_answer;
       setupAnswerButton(rootView, showButtonId, hideButtonId, answerAudio, answer);
@@ -82,6 +83,13 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       return rootView;
     }
 
+    private String removeRubyMarker(String text) {
+      String res = text.replaceAll("\\[/?rb\\]", "");
+      res = res.replace("[rt]", "(");
+      res = res.replace("[/rt]", ")");
+      return res;
+    }
+    
     private void setupRecordAnswerUI(View rootView, Bundle metaInfo, int index) {
       File appDir =
           new File(Environment.getExternalStorageDirectory(), getString(R.string.app_name));
