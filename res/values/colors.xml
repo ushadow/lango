@@ -13,9 +13,19 @@
     
     <!-- Home page colors -->
     <string-array name="course_colors">
+      <item>#ffccaa</item>
+      <item>#ff8080</item>
+      <item>#aade87</item>      
+      <item>#afc6e9</item>
+    </string-array>
+    
+    <!-- Home page colors BACKUP-->
+    <string-array name="course_colors_BACKUP">
       <item>#aade87</item>
       <item>#ffccaa</item>
       <item>#ff8080</item>
       <item>#afc6e9</item>
-    </string-array>
+    </string-array>    
+    
+    
 </resources>
