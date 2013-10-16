@@ -2,6 +2,7 @@ package com.mit6570.lango;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,6 +82,9 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter{
 
      TextView tv = (TextView) convertView;
      tv.setText(exercises.get(groupPosition).name());
+     
+     //testing
+     tv.setBackgroundColor(context.getResources().getColor(R.color.red_bk));
 
      return convertView;
     }

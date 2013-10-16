@@ -43,7 +43,7 @@
         <item name="android:paddingBottom">8dp</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:textColor">@color/txt_black</item>
-        <item name="android:background">@color/bk_green</item>
+        <!-- <item name="android:background">@color/bk_green</item> -->
     </style>
  
     <!-- Exercise Menu page list theme: LEVEL 2. -->
