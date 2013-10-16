@@ -83,7 +83,7 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter{
      TextView tv = (TextView) convertView;
      tv.setText(exercises.get(groupPosition).name());
      
-     //testing
+     //testing by Lei Zhang
      tv.setBackgroundColor(context.getResources().getColor(R.color.red_bk));
 
      return convertView;

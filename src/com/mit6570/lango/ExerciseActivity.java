@@ -8,20 +8,24 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class ExerciseActivity extends FragmentActivity {
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_exercise);
 
     ViewPager vp = (ViewPager) findViewById(R.id.pager_exercise);
+    
 
     Bundle extras = getIntent().getExtras();
     final String src = extras.getString(getString(R.string.ex_src));
