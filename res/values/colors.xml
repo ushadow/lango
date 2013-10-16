@@ -11,6 +11,16 @@
     <color name="button_text_green">#006400</color>
     <color name="button_text_red">#B0171F</color>
     
+    
+    
+    <!-- Exercise page banner and background colors -->
+    <color name="red_banner">#CD0000</color> <!-- red 3 -->
+    <color name="red_bk">#FFE4E1</color> <!-- mistyrose 1 (mistyrose) -->
+    <color name="orange_banner">#FF6103</color> <!-- cadmiumorange -->
+    <color name="orange_bk">#FFE7BA</color>    <!-- wheat 1 -->
+    <color name="blue_banner">#1C86EE</color> <!-- dodgerblue 2	 -->
+    <color name="blue_bk">#F0F8FF</color>    <!-- aliceblue	 -->    
+    
     <!-- Home page colors -->
     <string-array name="course_colors">
       <item>#ffccaa</item>
