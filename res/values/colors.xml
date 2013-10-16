@@ -21,6 +21,7 @@
     <color name="blue_banner">#1C86EE</color> <!-- dodgerblue 2	 -->
     <color name="blue_bk">#F0F8FF</color>    <!-- aliceblue	 -->    
     <color name="green_bk">#F0FFF0</color>
+    <color name="green_banner">#228B22</color> <!-- forestgreen -->
     
     
     <!-- Home page colors -->

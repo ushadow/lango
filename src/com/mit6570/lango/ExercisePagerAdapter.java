@@ -85,8 +85,8 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
     private String removeRubyMarker(String text) {
       String res = text.replaceAll("\\[/?rb\\]", "");
-      res = res.replace("[rt]", "(");
-      res = res.replace("[/rt]", ")");
+      res = res.replace("[rt]", "[");
+      res = res.replace("[/rt]", "]");
       return res;
     }
     
