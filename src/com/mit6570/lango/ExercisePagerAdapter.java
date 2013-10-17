@@ -53,7 +53,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       setupText(rootView, R.id.text_instruction, instruction);
 
       // Set exercise description.
-      String questionAudio = removeRubyMarker(b.getString(getString(R.string.ex_description_audio)));
+      String questionAudio = b.getString(getString(R.string.ex_description_audio));
       setupPlayQuestionButton(rootView, R.id.button_playquestion, questionAudio);
 
       String answerAudio = b.getString(getString(R.string.ex_answer_audio));
@@ -69,6 +69,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
       String question = b.getString(getString(R.string.ex_question));
       if (question != null) {
+        question = removeRubyMarker(question);
         setupText(rootView, R.id.text_question, question);
       }
 
@@ -83,6 +84,11 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       return rootView;
     }
 
+    /**
+     * Removes the ruby markers.
+     * @param text cannot be null.
+     * @return
+     */
     private String removeRubyMarker(String text) {
       String res = text.replaceAll("\\[/?rb\\]", "");
       res = res.replace("[rt]", "[");
