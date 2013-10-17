@@ -62,4 +62,11 @@
         Click the PB button to replay your recording.
         Swipe left and right to view more exercises.</string>
     <string name="copyright">"© 2013 by MIT Japanese Language Program. \nAll rights reserved."</string>
+    
+ <!--     Course Names
+    <string name="Japanese1">mit_japanese_501.xml</string>
+    <string name="Japanese2">mit_japanese_502.xml</string>
+    <string name="Japanese3">mit_japanese_iii.xml</string>
+    <string name="Japanese4">mit_japanese_504.xml</string> --> 
+    
 </resources>
