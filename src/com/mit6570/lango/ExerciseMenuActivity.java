@@ -50,6 +50,9 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
     String src = extras.getString(getString(R.string.key_course_src));
     if (courseSrc == null || !courseSrc.equals(src)) {
       courseSrc = src;
+      
+      Log.d("ExerciseMenuActivity", courseSrc);
+      
       initializeCourseList();
     }
   }
@@ -68,7 +71,7 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
 
   private void initializeCourseList() {
     final List<ExerciseMenu> exercises = parseXml(courseSrc);
-    ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises);
+    ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises, courseSrc);
     setListAdapter(ema);
     getExpandableListView().setOnChildClickListener(new OnChildClickListener() {
 
