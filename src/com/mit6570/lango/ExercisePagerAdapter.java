@@ -55,9 +55,9 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 //      //test by Lei Zhang
 //      String ex_Src= metaInfo.getString(getString(R.string.ex_src));
 //      Log.d("ExercisePagerAdapter-LZ",ex_Src);
-//      //rootView.setBackgroundColor(R.color.red_bk);
+//      rootView.setBackgroundColor(R.color.red_bk);
       
-      
+ 
       
       // Set exercise description.
       String questionAudio = b.getString(getString(R.string.ex_description_audio));
