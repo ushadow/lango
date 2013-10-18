@@ -32,17 +32,6 @@ public class ExerciseActivity extends FragmentActivity {
 		final String src = extras.getString(getString(R.string.ex_src));
 		final String srcBaseName = src.replace(".xml", "");
 
-		// test Lei Zhang
-		View vpts = vp.findViewById(R.id.pager_title_strip);
-		Log.d("EXERCISE ACTIVITY-LZ", src);
-		if (src.contains("502")) {
-			vpts.setBackgroundColor(vp.getResources().getColor(
-					R.color.red_banner));
-		}else
-		if (src.contains("III")) {
-			vpts.setBackgroundColor(vp.getResources().getColor(
-					R.color.green_banner));
-		}
 
 
 		try {

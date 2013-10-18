@@ -14,13 +14,11 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter{
 
     private Context context;
     private List<ExerciseMenu> exercises;
-	private String courseSrc;
 
     
-    public ExpandableMenuAdapter(Context context, List<ExerciseMenu> exercises, String courseSrc) {
+    public ExpandableMenuAdapter(Context context, List<ExerciseMenu> exercises) {
      this.context = context;
      this.exercises = exercises;
-     this.courseSrc=courseSrc;
     }
     
     @Override
@@ -86,13 +84,7 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter{
      TextView tv = (TextView) convertView;
      tv.setText(exercises.get(groupPosition).name());
      
-     //testing by Lei Zhang
-     if (courseSrc.equals("mit_japanese_502.xml")){
-     		tv.setBackgroundColor(context.getResources().getColor(R.color.red_bk));
-     }
-     if (courseSrc.equals("mit_japanese_iii.xml")){
-  		tv.setBackgroundColor(context.getResources().getColor(R.color.green_bk));
-     }
+
      return convertView;
     }
 

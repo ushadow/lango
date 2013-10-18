@@ -52,10 +52,6 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       instruction = removeRubyMarker(instruction);
       setupText(rootView, R.id.text_instruction, instruction);
 
-//      //test by Lei Zhang
-//      String ex_Src= metaInfo.getString(getString(R.string.ex_src));
-//      Log.d("ExercisePagerAdapter-LZ",ex_Src);
-//      rootView.setBackgroundColor(R.color.red_bk);
       
  
       

@@ -71,7 +71,7 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
 
   private void initializeCourseList() {
     final List<ExerciseMenu> exercises = parseXml(courseSrc);
-    ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises, courseSrc);
+    ExpandableMenuAdapter ema = new ExpandableMenuAdapter(this, exercises);
     setListAdapter(ema);
     getExpandableListView().setOnChildClickListener(new OnChildClickListener() {
 
