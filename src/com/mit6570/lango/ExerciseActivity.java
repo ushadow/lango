@@ -8,16 +8,12 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ScrollView;
 
 public class ExerciseActivity extends FragmentActivity {
 
@@ -31,8 +27,6 @@ public class ExerciseActivity extends FragmentActivity {
 		Bundle extras = getIntent().getExtras();
 		final String src = extras.getString(getString(R.string.ex_src));
 		final String srcBaseName = src.replace(".xml", "");
-
-
 
 		try {
 			InputStream is = getAssets().open(src);
