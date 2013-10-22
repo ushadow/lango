@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <courses>
-    <course name="Japanese I" sub="Fall: 21F.501/551"/>
+    <course name="Japanese I" sub="Fall: 21F.501/551" src="mit_japanese_1.xml"/>
     <course name="Japanese II" sub="Spring: 21F.502/552" src="mit_japanese_502.xml"/>
     <course name="Japanese III" sub="Fall: 21F.503" src="mit_japanese_iii.xml"/>
-    <course name="Japanese IV" sub="Spring: 21F.504"/>
+    <course name="Japanese IV" sub="Spring: 21F.504" src="mit_japanese_iv.xml"/>
 </courses>
