@@ -39,7 +39,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
                              Bundle savedInstanceState) {
       // The last two arguments ensure LayoutParams are inflated
       // properly.
-      View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);
+      View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);     
       Bundle args = getArguments();
       return createView(rootView, args);
     }
@@ -52,6 +52,9 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       instruction = removeRubyMarker(instruction);
       setupText(rootView, R.id.text_instruction, instruction);
 
+      
+ 
+      
       // Set exercise description.
       String questionAudio = b.getString(getString(R.string.ex_description_audio));
       setupPlayQuestionButton(rootView, R.id.button_playquestion, questionAudio);

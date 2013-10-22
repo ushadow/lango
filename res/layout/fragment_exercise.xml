@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:background="@color/bk_green"
     android:orientation="vertical"
-    tools:context=".ExerciseActivity" >
+    tools:context=".ExerciseActivity" 
+    android:id="@+id/ExerciseOuterBox">
 
     <LinearLayout
         android:layout_width="match_parent"
