@@ -13,7 +13,6 @@ import android.app.ActionBar;
 import android.app.ExpandableListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Xml;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,7 +30,6 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
   private static final String ROOT_TAG = "course";
   private static final String LESSON_TAG = "lesson";
   private static final String DRILL_TAG = "drill";
-  private static final String SECTION_TAG = "section";
   private static final String NAME_ATTRIBUTE = "name";
   private static final String SRC_ATTRIBUTE = "src";
 
@@ -127,11 +125,6 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
               if (name.equalsIgnoreCase(DRILL_TAG)) {
                 String src = Utils.attributes(parser).get(SRC_ATTRIBUTE);
                 currentExe.add(new ExerciseMenu(parser.nextText(), src));
-              } else if (name.equalsIgnoreCase(SECTION_TAG)) {
-                String sectionName = Utils.attributes(parser).get(NAME_ATTRIBUTE);
-                ExerciseMenu em = new ExerciseMenu(sectionName);
-                currentExe.add(em);
-                currentExe = em;
               }
             } else if (name.equalsIgnoreCase(ROOT_TAG)) {
               courseName = Utils.attributes(parser).get(NAME_ATTRIBUTE);
@@ -141,8 +134,6 @@ public class ExerciseMenuActivity extends ExpandableListActivity {
             name = parser.getName();
             if (name.equalsIgnoreCase(LESSON_TAG) && currentExe != null) {
               exercises.add(currentExe);
-            } else if (name.equalsIgnoreCase(SECTION_TAG) && currentExe != null ) {
-              currentExe = currentExe.parent();
             } else if (name.equalsIgnoreCase(ROOT_TAG)) {
               done = true;
             }
