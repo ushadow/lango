@@ -302,7 +302,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
           int imgWidthDesired = screenWidth;
           int imgHeightDesired = imgHeightOriginal;
 
-          if (5 * imgWidthOriginal < 4 * screenWidth) {
+          if (10 * imgWidthOriginal < 9 * screenWidth) {
             imgWidthDesired = screenWidth-5;
             imgHeightDesired = imgHeightOriginal * imgWidthDesired / imgWidthOriginal;
             iv.setLayoutParams(new LinearLayout.LayoutParams(imgWidthDesired, imgHeightDesired));
