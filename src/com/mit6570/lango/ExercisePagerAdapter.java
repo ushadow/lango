@@ -23,7 +23,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,18 +36,17 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     private MediaPlayer questionPlayer, responsePlayer, answerPlayer;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       // The last two arguments ensure LayoutParams are inflated
       // properly.
-      View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);     
+      View rootView = inflater.inflate(R.layout.fragment_exercise, container, false);
       Bundle args = getArguments();
       return createView(rootView, args);
     }
 
     private View createView(View rootView, Bundle b) {
       int index = b.getInt(KEY_INDEX);
-      int width=b.getInt(KEY_WIDTH);
+      int width = b.getInt(KEY_WIDTH);
 
       Bundle instructionInfo = b.getBundle(KEY_META);
       String instruction = instructionInfo.getString(getString(R.string.ex_instruction));
@@ -57,9 +55,9 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
       String imgFile = instructionInfo.getString(getString(R.string.ex_instr_img));
       if (imgFile != null) {
-        setupImage(rootView, imgFile, R.id.image_instruction, 1, width);
+        setupImage(rootView, imgFile, R.id.image_instruction, true, width);
       }
-      
+
       // Set exercise description.
       String questionAudio = b.getString(getString(R.string.ex_description_audio));
       setupPlayQuestionButton(rootView, R.id.button_playquestion, questionAudio);
@@ -72,7 +70,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
       imgFile = b.getString(getString(R.string.ex_image));
       if (imgFile != null) {
-        setupImage(rootView, imgFile, R.id.image_description, 0, width);
+        setupImage(rootView, imgFile, R.id.image_description, false, width);
       }
 
       String question = b.getString(getString(R.string.ex_question));
@@ -94,6 +92,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
     /**
      * Removes the ruby markers.
+     * 
      * @param text cannot be null.
      * @return
      */
@@ -103,7 +102,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       res = res.replace("[/rt]", "]");
       return res;
     }
-    
+
     private void setupRecordAnswerUI(View rootView, Bundle metaInfo, int index) {
       File appDir =
           new File(Environment.getExternalStorageDirectory(), getString(R.string.app_name));
@@ -144,7 +143,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
 
     /**
      * Plays an audio file.
-     *
+     * 
      * @param file absolute path of an audio file.
      */
     private MediaPlayer startPlaying(String file, final ToggleButton tb) {
@@ -164,7 +163,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     }
 
     /**
-     *
+     * 
      * @param afd
      * @param tb
      * @return the new {@code MediaPlayer} created.
@@ -233,7 +232,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     }
 
     /**
-     *
+     * 
      * @param rootView
      * @param showButtonId id of the button to be shown.
      * @param hideButtonId id of the button to be hidden.
@@ -241,7 +240,7 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
      * @param answer
      */
     private void setupAnswerButton(final View rootView, int showButtonId, int hideButtonId,
-                                   final String audioFile, final String answer) {
+        final String audioFile, final String answer) {
       final ToggleButton tb = (ToggleButton) rootView.findViewById(showButtonId);
       rootView.findViewById(hideButtonId).setVisibility(View.GONE);
       tb.setOnClickListener(new OnClickListener() {
@@ -273,70 +272,48 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       });
     }
 
-    private void setupImage(View rootView, String imgFile, int viewId, int isInstructionImg, int screenWidthPixels) {
-    	int isInstruction=isInstructionImg;
+    private void setupImage(View rootView, String imgFile, int viewId, boolean isInstructionImg,
+        int screenWidthPixels) {
       ImageView iv = (ImageView) rootView.findViewById(viewId);
-      int screenWidth=screenWidthPixels;
+      int screenWidth = screenWidthPixels;
       try {
         Bitmap image = getBitmapFromAsset(imgFile);
         iv.setImageBitmap(image);
-        
-        if (isInstruction==0){
-        	Log.d("ExercisePagerAdapter-LZ", "ENTERED instruction image" );
-        	
-        	int imgWidthOriginal=image.getWidth();
-        	int imgHeightOriginal=image.getHeight();
-        	 int imgWidthDesired= screenWidth;
-        	 int imgHeightDesired= imgHeightOriginal;
-        		Log.d("ExercisePagerAdapter-LZ imgWidthOriginal", Integer.toString(imgWidthOriginal) );
-        		Log.d("ExercisePagerAdapter-LZ screenWidth", Integer.toString(screenWidth) );
-        		        		
-        		
-        	if (5* imgWidthOriginal < 2* screenWidth){
-        		Log.d("ExercisePagerAdapter-LZ START", "start width processing");
-        		imgWidthDesired=  (int) (2.0/5* screenWidth);
-        		imgHeightDesired=imgHeightOriginal*imgWidthDesired/imgWidthOriginal;
-        		iv.setLayoutParams(new LinearLayout.LayoutParams(imgWidthDesired, imgHeightDesired));
-        		Log.d("ExercisePagerAdapter-LZ imgWidthDesired", Integer.toString(imgWidthDesired) );
-        	} 
-        		        	
+
+        if (isInstructionImg) {
+          int imgWidthOriginal = image.getWidth();
+          int imgHeightOriginal = image.getHeight();
+          int imgWidthDesired = screenWidth;
+          int imgHeightDesired = imgHeightOriginal;
+
+          if (5 * imgWidthOriginal < 2 * screenWidth) {
+            imgWidthDesired = (int) (2.0 / 5 * screenWidth);
+            imgHeightDesired = imgHeightOriginal * imgWidthDesired / imgWidthOriginal;
+            iv.setLayoutParams(new LinearLayout.LayoutParams(imgWidthDesired, imgHeightDesired));
+          }
+
         }
-        
-        
-        if (isInstruction==1){
-        	Log.d("ExercisePagerAdapter-LZ", "ENTERED instruction image" );
-        	
-        	int imgWidthOriginal=image.getWidth();
-        	int imgHeightOriginal=image.getHeight();
-        	 int imgWidthDesired= screenWidth;
-        	 int imgHeightDesired= imgHeightOriginal;
-        		Log.d("ExercisePagerAdapter-LZ imgWidthOriginal", Integer.toString(imgWidthOriginal) );
-        		Log.d("ExercisePagerAdapter-LZ screenWidth", Integer.toString(screenWidth) );
-        		        		
-        		
-        	if (5* imgWidthOriginal < 4* screenWidth){
-        		Log.d("ExercisePagerAdapter-LZ START", "start width processing");
-        		imgWidthDesired=   screenWidth;
-        		imgHeightDesired=imgHeightOriginal*imgWidthDesired/imgWidthOriginal;
-        		iv.setLayoutParams(new LinearLayout.LayoutParams(imgWidthDesired, imgHeightDesired));
-        		Log.d("ExercisePagerAdapter-LZ imgWidthDesired", Integer.toString(imgWidthDesired) );
-        	} 
-        		        	
-        }       
-        
-        
-        
-        
-        
+
+        if (isInstructionImg) {
+          int imgWidthOriginal = image.getWidth();
+          int imgHeightOriginal = image.getHeight();
+          int imgWidthDesired = screenWidth;
+          int imgHeightDesired = imgHeightOriginal;
+
+          if (5 * imgWidthOriginal < 4 * screenWidth) {
+            imgWidthDesired = screenWidth;
+            imgHeightDesired = imgHeightOriginal * imgWidthDesired / imgWidthOriginal;
+            iv.setLayoutParams(new LinearLayout.LayoutParams(imgWidthDesired, imgHeightDesired));
+          }
+        }
       } catch (IOException e) {
         Log.e("lango", e.getMessage());
       }
-
     }
 
     /**
      * Helper Functions
-     *
+     * 
      * @throws IOException
      */
     private Bitmap getBitmapFromAsset(String strName) throws IOException {
@@ -361,20 +338,16 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
   private final Context context;
   private final List<Bundle> exercises;
   private final Bundle metaInfo;
-  
-  private final int screenWidthPixels;
-  private final int screenHeightPixels;
-   
 
-  public ExercisePagerAdapter(FragmentActivity fa, List<Bundle> exercises, Bundle metaInfo, int widthPixels, int heightPixels) {
+  private final int screenWidthPixels;
+
+  public ExercisePagerAdapter(FragmentActivity fa, List<Bundle> exercises, Bundle metaInfo,
+      int widthPixels, int heightPixels) {
     super(fa.getSupportFragmentManager());
     context = fa;
     this.exercises = exercises;
     this.metaInfo = metaInfo;
-    screenWidthPixels=widthPixels;
-    screenHeightPixels=heightPixels;
-    Log.d("EXERCISE PAGER ADAPTER", "entered ");
-    
+    screenWidthPixels = widthPixels;
   }
 
   @Override

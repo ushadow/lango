@@ -32,7 +32,6 @@ public class ExerciseActivity extends FragmentActivity {
 		Bundle extras = getIntent().getExtras();
 		final String src = extras.getString(getString(R.string.ex_src));
 		final String srcBaseName = src.replace(".xml", "");
-		//////////////Lei start
 		
 		WindowManager w = this.getWindowManager();
 		Display d = w.getDefaultDisplay();
@@ -57,15 +56,6 @@ public class ExerciseActivity extends FragmentActivity {
 		    heightPixels = realSize.y;
 		} catch (Exception ignored) {
 		}
-		
-		
-		
-		
-		/////////////Lei end
-		
-		
-		
-		
 		
 		try {
 			InputStream is = getAssets().open(src);
