@@ -47,13 +47,15 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
     private View createView(View rootView, Bundle b) {
       int index = b.getInt(KEY_INDEX);
 
-      Bundle metaInfo = b.getBundle(KEY_META);
-      String instruction = metaInfo.getString(getString(R.string.ex_instruction));
+      Bundle instructionInfo = b.getBundle(KEY_META);
+      String instruction = instructionInfo.getString(getString(R.string.ex_instruction));
       instruction = removeRubyMarker(instruction);
       setupText(rootView, R.id.text_instruction, instruction);
 
-      
- 
+      String imgFile = instructionInfo.getString(getString(R.string.ex_instr_img));
+      if (imgFile != null) {
+        setupImage(rootView, imgFile, R.id.image_instruction);
+      }
       
       // Set exercise description.
       String questionAudio = b.getString(getString(R.string.ex_description_audio));
@@ -65,9 +67,9 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       int hideButtonId = answerAudio == null ? R.id.button_playanswer : R.id.button_answer;
       setupAnswerButton(rootView, showButtonId, hideButtonId, answerAudio, answer);
 
-      String imgFile = b.getString(getString(R.string.ex_image));
+      imgFile = b.getString(getString(R.string.ex_image));
       if (imgFile != null) {
-        setupDescriptionImage(rootView, imgFile);
+        setupImage(rootView, imgFile, R.id.image_description);
       }
 
       String question = b.getString(getString(R.string.ex_question));
@@ -76,9 +78,9 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
         setupText(rootView, R.id.text_question, question);
       }
 
-      boolean isRecordAnswer = metaInfo.getBoolean(getString(R.string.ex_record_answer));
+      boolean isRecordAnswer = instructionInfo.getBoolean(getString(R.string.ex_record_answer));
       if (isRecordAnswer) {
-        setupRecordAnswerUI(rootView, metaInfo, index);
+        setupRecordAnswerUI(rootView, instructionInfo, index);
       } else {
         View view = rootView.findViewById(R.id.group_record);
         view.setVisibility(View.GONE);
@@ -268,14 +270,13 @@ public class ExercisePagerAdapter extends FragmentStatePagerAdapter {
       });
     }
 
-    private void setupDescriptionImage(View rootView, String imgFile) {
-      ImageView iv = (ImageView) rootView.findViewById(R.id.image_description);
+    private void setupImage(View rootView, String imgFile, int viewId) {
+      ImageView iv = (ImageView) rootView.findViewById(viewId);
       try {
         Bitmap image = getBitmapFromAsset(imgFile);
         iv.setImageBitmap(image);
       } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
+        Log.e("lango", e.getMessage());
       }
 
     }

@@ -23,25 +23,12 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.mit6570.lango.ExerciseMenuActivity"
-            android:label="@string/sec_Exercises" >
-        </activity>
-        <activity
-            android:name="com.mit6570.lango.FlashcardMenuActivity"
-            android:label="@string/sec_Flashcards" >
-        </activity>
-        <activity
-            android:name="com.mit6570.lango.KanjiMenuActivity"
-            android:label="@string/sec_Kangji" >
-        </activity>
-                <activity
-            android:name="com.mit6570.lango.KanjiActivity"
-            android:label="@string/title_activity_Kanji" >
+            android:label="@string/title_activity_exercise_menu" >
         </activity>
         <activity
             android:name="com.mit6570.lango.ExerciseActivity"

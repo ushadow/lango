@@ -67,10 +67,14 @@ public class ExerciseParser {
               Map<String, String> attributes = Utils.attributes(parser);
               metaInfo.putString(context.getString(R.string.ex_instruction), parser.nextText());
               String record = attributes.get(RECORD_ATTRIBUTE);
+              String img = attributes.get(IMG_ATTRIBUTE);
               if (record != null && record.equalsIgnoreCase("false")) {
                 metaInfo.putBoolean(context.getString(R.string.ex_record_answer), false);
               } else {
                 metaInfo.putBoolean(context.getString(R.string.ex_record_answer), true);
+              }
+              if (img != null) {
+                metaInfo.putString(context.getString(R.string.ex_instr_img), img);
               }
             } else if (name.equalsIgnoreCase(EXERCISE_TAG)) {
               currentExe = new Bundle();

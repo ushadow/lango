@@ -12,14 +12,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <RelativeLayout style="@style/ExerciseBox" >
+        <LinearLayout style="@style/ExerciseBox" >
 
             <TextView
                 android:id="@+id/text_instruction"
                 style="@style/ExerciseText"
                 android:fontFamily="Times New Roman"
                 android:text="@string/exercise_instruction" />
-        </RelativeLayout>
+            
+            <ImageView
+                android:id="@+id/image_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image_instruction" />
+        </LinearLayout>
 
         <LinearLayout
             style="@style/ExerciseBox"
@@ -95,8 +102,6 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
-        <!-- <View style="@style/seporator" /> -->
 
         <LinearLayout style="@style/ExerciseBox" >
 

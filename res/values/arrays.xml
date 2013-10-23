@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="kanjimenu">
-        <item>@string/kanji_lesson_7</item>
-        <item>@string/kanji_lesson_8</item>
-        <item>@string/kanji_lesson_9</item>
-        <item>@string/kanji_lesson_10</item>
-        <item>@string/kanji_lesson_11</item>
-        <item>@string/kanji_lesson_12</item>
-    </string-array>
-    
     <string-array name="course_bg">
         <item>@drawable/selector_jap1_bg</item>
         <item>@drawable/selector_jap2_bg</item>
